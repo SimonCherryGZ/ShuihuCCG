@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3e0b5"
+    tools:context="com.simoncherry.shuihuccg.Fragment.BattleFragment" >
+    
+    <View 
+        android:id="@+id/layout_tab_space"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"/>
+    
+    <ImageView
+        android:id="@+id/img_hand_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/divider_view"
+        android:scaleType="fitXY" />
+    
+    <RelativeLayout
+        android:id="@+id/layout_player_hand"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentLeft="true"
+    	android:layout_above="@+id/divider_view" >
+
+	    <ImageView
+	        android:id="@+id/img_player_hand"
+	        android:layout_width="150dp"
+	        android:layout_height="210dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginTop="40dp"
+	        android:src="@drawable/player_hand" />
+	
+	    <ImageView
+	        android:id="@+id/img_player_card1"
+	        android:layout_width="60dp"
+	        android:layout_height="90dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="95dp"
+	        android:layout_marginTop="70dp" />
+    
+    </RelativeLayout>
+    
+    <ImageView 
+        android:id="@+id/img_hand_wave"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/hand_wave" />
+    
+    <RelativeLayout
+        android:id="@+id/layout_npc_hand"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentRight="true"
+    	android:layout_above="@+id/divider_view" >
+    
+	    <ImageView
+	        android:id="@+id/img_npc_card1"
+	        android:layout_width="60dp"
+	        android:layout_height="90dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginRight="90dp"
+	        android:layout_marginTop="70dp" />
+	    
+	    <ImageView
+	        android:id="@+id/img_npc_hand"
+	        android:layout_width="150dp"
+	        android:layout_height="210dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginTop="40dp"
+	        android:layout_marginRight="14dp"
+	        android:src="@drawable/enemy_hand" />
+    
+    </RelativeLayout>
+    
+    <View 
+        android:id="@+id/divider_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerInParent="true"
+        android:background="#333333"/>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divider_view" >
+
+	    <ImageView
+	        android:id="@+id/img_battle_background"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:scaleType="fitXY" />
+	
+	    <ImageView
+	        android:id="@+id/img_player_card2"
+	        android:layout_width="120dp"
+	        android:layout_height="180dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_above="@+id/img_battle_background"
+	        android:layout_marginLeft="110dp"
+	        android:layout_marginTop="10dp" />
+	    
+	    <ImageView
+	        android:id="@+id/img_npc_card2"
+	        android:layout_width="120dp"
+	        android:layout_height="180dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_above="@+id/img_battle_background"
+	        android:layout_marginRight="110dp"
+	        android:layout_marginTop="10dp" />
+    
+    </RelativeLayout>
+    
+    <Button
+        android:id="@+id/btn_battle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/btn_battle"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:text="拍" />
+    
+    <ImageView 
+        android:id="@+id/img_battle_result"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/battle_result_win"
+        android:visibility="invisible" />
+
+</RelativeLayout>

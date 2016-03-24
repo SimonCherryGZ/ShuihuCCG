@@ -1,0 +1,133 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_auction"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.simoncherry.shuihuccg.fragment.AuctionFragment" >
+    
+    <View 
+        android:id="@+id/layout_tab_space"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"/>
+    
+    <Button
+        android:id="@+id/btn_auction"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/btn_selector"
+        android:textColor="@color/white"
+        android:text="开拍" />
+
+    <Button
+        android:id="@+id/btn_ignore"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/btn_selector"
+        android:textColor="@color/white"
+        android:text="退出" />
+    
+    <ImageView
+        android:id="@+id/img_auction_chara"
+        android:layout_width="100dp"
+        android:layout_height="155dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp" />
+
+    <ListView 
+        android:id="@+id/auction_list"
+        android:layout_width="300dp"
+        android:layout_height="280dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/img_auction_chara"
+        android:background="#a0d0d0d0" >
+    </ListView>
+
+    <ImageView
+        android:id="@+id/img_auction_card"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="50dp" />
+    
+    <ImageView
+        android:id="@+id/img_new_logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/new_logo"
+        android:visibility="invisible" />
+    
+    <TextView
+        android:id="@+id/tv_auction_dialog"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/shop_bubble_dialog"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:textSize="16sp"
+        android:text="谁要竞价？"
+        android:visibility="invisible" />
+    
+    <TextView
+        android:id="@+id/tv_auction_list_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="270dp"
+        android:gravity="center"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="小伙伴们考虑中"
+        android:visibility="invisible" />
+    
+    <TextView
+        android:id="@+id/tv_player_dialog"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/shop_bubble_dialog"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:textSize="16sp"
+        android:text="我这张怎样"
+        android:visibility="invisible" />
+    
+    <TextView
+        android:id="@+id/tv_card_value" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:textColor="#b81818"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="0" >
+    </TextView>
+
+</RelativeLayout>

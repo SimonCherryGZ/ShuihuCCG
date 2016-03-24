@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent"  
+    android:clickable="true"  
+    android:orientation="vertical"  
+    android:padding="20.0dip" >  
+  
+    <LinearLayout  
+        android:layout_width="fill_parent"  
+        android:layout_height="wrap_content"  
+        android:layout_gravity="center"  
+        android:orientation="vertical" >  
+  
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:background="#844317"
+            android:gravity="center"
+            android:text="@string/item_1"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:visibility="visible" />
+  
+          
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="140dp" >
+            
+            <TextView 
+                android:id="@+id/calc_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:textSize="16sp"
+                android:text="总价："/>
+            
+            <TextView 
+                android:id="@+id/calc_unit_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/calc_mcl_sign"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:text="2¥"/>
+            
+            <TextView 
+                android:id="@+id/calc_mcl_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="16sp"
+                android:text="x"/>
+            
+            <TextView 
+                android:id="@+id/calc_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/calc_mcl_sign"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:textSize="16sp"
+                android:text="99"/>
+            
+            <TextView 
+                android:id="@+id/calc_equal_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/calc_count"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:textSize="16sp"
+                android:text="="/>
+            
+            <TextView 
+                android:id="@+id/calc_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:text="198¥"/>
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="40.0dip"
+                android:layout_height="40.0dip"
+                android:layout_above="@+id/calc_count"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@+id/calc_mcl_sign"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="+" />
+
+            <Button
+                android:id="@+id/btn_sub"
+                android:layout_width="40.0dip"
+                android:layout_height="40.0dip"
+                android:layout_below="@+id/calc_count"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/calc_mcl_sign"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="-" />
+            
+        </RelativeLayout>
+  
+        <View  
+            android:layout_width="fill_parent"  
+            android:layout_height="1.0px"  
+            android:background="#ffd0d0d0" />  
+  
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60.0dip"
+            android:layout_gravity="bottom"
+            android:background="#00c0c0c0"
+            android:gravity="center"
+            android:orientation="horizontal" >
+  
+            <Button  
+                android:id="@+id/btn_positive"  
+                android:layout_width="114.0dip"  
+                android:layout_height="40.0dip"  
+                android:gravity="center"  
+                android:text="OK" />  
+                
+            <View
+                android:layout_width="30dp"
+                android:layout_height="fill_parent" />
+  
+            <Button  
+                android:id="@+id/btn_negative"  
+                android:layout_width="114.0dip"  
+                android:layout_height="40.0dip"  
+                android:gravity="center"  
+                android:text="CANCEL" />  
+        </LinearLayout>  
+    </LinearLayout>  
+  
+</FrameLayout>  

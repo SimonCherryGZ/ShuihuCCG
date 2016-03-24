@@ -1,0 +1,220 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+	<RelativeLayout
+	    android:id="@+id/layout_main_menu"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentTop="true"
+	    android:background="@drawable/main_menu_background" >
+        
+	    <Button
+	        android:id="@+id/btn_start"
+	        android:layout_width="200dp"
+	        android:layout_height="50dp"
+	        android:layout_alignParentBottom="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginBottom="150dp"
+	        android:background="@drawable/btn_selector"
+	        android:textColor="@color/white"
+	        android:text="开始游戏"
+	        android:visibility="invisible" />
+	    
+	    <Button
+	        android:id="@+id/btn_collection"
+	        android:layout_width="200dp"
+	        android:layout_height="50dp"
+	        android:layout_alignParentBottom="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginBottom="70dp"
+	        android:background="@drawable/btn_selector"
+	        android:textColor="@color/white"
+	        android:text="收 集 册"
+	        android:visibility="invisible" />
+	    
+	    <Button
+	        android:id="@+id/btn_unlock"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:text="UNLOCK"
+	        android:visibility="invisible" />
+	    
+	    <Button
+            android:id="@+id/btn_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btn_unlock"
+            android:layout_alignParentTop="true"
+            android:text="MONEY"
+            android:visibility="invisible" />
+	    
+	    <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btn_money"
+            android:layout_alignParentTop="true"
+            android:text="CLEAR"
+            android:visibility="visible" />
+	    
+	    <ImageView
+	        android:id="@+id/img_menu_card_l"
+	        android:layout_width="150dp"
+	        android:layout_height="225dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="100dp" />
+	    
+	    <ImageView
+	        android:id="@+id/img_menu_card_r"
+	        android:layout_width="170dp"
+	        android:layout_height="255dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginRight="30dp"
+	        android:layout_marginTop="70dp" />
+	    
+	    <ImageView 
+	        android:id="@+id/img_menu_bag"
+	        android:layout_width="192dp"
+	        android:layout_height="150dp"
+	        android:layout_centerHorizontal="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginTop="220dp" />
+	    
+	    <TextView 
+	        android:id="@+id/tv_menu_title"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="180dp"
+	        android:gravity="center"
+	        android:background="#ff544451"
+	        android:textColor="@color/white"
+	        android:textStyle="bold"
+	        android:textSize="40sp"
+	        android:text="水浒集卡乐"
+	        android:visibility="invisible" />
+	    
+    </RelativeLayout>
+    
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+    </FrameLayout>
+    
+    <RelativeLayout
+        android:id="@+id/layout_tab"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible" >
+        
+        <ImageButton
+            android:id="@+id/tab_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/icon_scene_pressed" />
+
+        <ImageButton
+            android:id="@+id/tab_2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignBottom="@id/tab_1"
+            android:layout_toRightOf="@id/tab_1"
+            android:layout_marginLeft="20dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/icon_status_default" />
+
+        <ImageButton
+            android:id="@+id/tab_3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignBottom="@id/tab_1"
+            android:layout_toLeftOf="@+id/tab_4"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/icon_note_default" />
+
+        <ImageButton
+            android:id="@+id/tab_4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignBottom="@id/tab_1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/icon_collection_default" />
+        
+        <ImageView 
+	        android:id="@+id/img_note_num"
+	        android:layout_width="35dp"
+	        android:layout_height="35dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentBottom="true"
+	        android:layout_marginRight="110dp"
+	        android:layout_marginBottom="40dp"
+	        android:src="@drawable/btn_battle_normal" />
+	
+	    <TextView
+	        android:id="@+id/tv_note_num"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentBottom="true"
+	        android:layout_marginRight="115dp"
+	        android:layout_marginBottom="45dp"
+	        android:gravity="center"
+	        android:ems="1"
+	        android:textColor="#ffffff"
+	        android:textSize="20sp"
+	        android:textStyle="bold"
+	        android:text="99" />
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/layout_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible" >
+	    
+        <ImageView
+            android:id="@+id/img_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitXY" />
+        
+        <TextView
+            android:id="@+id/tv_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_normal_color"
+            android:text="@string/tv_loading" />
+        
+    </RelativeLayout>
+
+
+</RelativeLayout>

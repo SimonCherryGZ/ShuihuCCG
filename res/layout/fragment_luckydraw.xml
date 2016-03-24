@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_luckydraw"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+    
+    
+    <ImageView
+        android:id="@+id/img_card"
+        android:layout_width="70dp"
+        android:layout_height="105dp"
+        android:layout_alignTop="@+id/img_noodle_bag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <ImageView
+        android:id="@+id/img_noodle_bag"
+        android:layout_width="150dp"
+        android:layout_height="192dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/noodle_bag" />
+
+    <RelativeLayout
+        android:id="@+id/layout_card_detail"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="80dp"
+        android:background="#80c0c0c0"
+        android:visibility="invisible" >
+
+        <ImageView
+            android:id="@+id/img_card_detail"
+            android:layout_width="120dp"
+            android:layout_height="170dp"
+            android:padding="10dp" />
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/img_card_detail"
+            android:layout_toRightOf="@+id/img_card_detail"
+            android:layout_marginTop="10dp"
+            android:background="#bf0000" />
+        
+        <LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/img_card_detail"
+	        android:layout_toRightOf="@+id/img_card_detail"
+	        android:layout_marginLeft="20dp"
+	        android:paddingRight="20dp"
+	        android:orientation="vertical" >
+	
+	        <TextView
+	            android:id="@+id/tv_card_index"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="10dp"
+	            android:paddingBottom="5dp"
+	            android:text="@string/hero_index"
+	            android:textColor="#ffffff"
+	            android:textSize="20sp" />
+	
+	        <TextView
+	            android:id="@+id/tv_card_star"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="5dp"
+	            android:paddingBottom="5dp"
+	            android:text="@string/hero_star"
+	            android:textColor="#333333"
+	            android:textSize="20sp" />
+	
+	        <TextView
+	            android:id="@+id/tv_card_epithet"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="5dp"
+	            android:paddingBottom="5dp"
+	            android:text="@string/hero_epithet"
+	            android:textColor="#333333"
+	            android:textSize="20sp" />
+	
+	        <TextView
+	            android:id="@+id/tv_card_name"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="5dp"
+	            android:paddingBottom="10dp"
+	            android:text="@string/hero_name"
+	            android:textColor="#333333"
+	            android:textSize="20sp" />
+	    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_new_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/new_logo" />
+    
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_bag_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img_noodle_bag"
+        android:layout_alignRight="@+id/img_noodle_bag"
+        android:layout_marginBottom="17dp"
+        android:text="x 99"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_normal_color" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_back"
+        android:text="" />
+
+</RelativeLayout>

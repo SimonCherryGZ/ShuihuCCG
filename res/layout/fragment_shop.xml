@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_shop"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.simoncherry.shuihuccg.fragment.ShopFragment" >
+
+    <ListView 
+        android:id="@+id/shop_list"
+        android:layout_width="300dp"
+        android:layout_height="320dp"
+        android:layout_centerInParent="true"
+        android:background="#a0e0e0e0" >
+        
+    </ListView>
+
+    <ImageView
+        android:id="@+id/img_shopkeeper_avatar"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_above="@+id/shop_list"
+        android:layout_alignLeft="@+id/shop_list"
+        android:scaleType="fitXY"
+        android:src="@drawable/chara_storekeeper" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/btn_back"
+        android:text="" />
+    
+    <View 
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/shop_list"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tv_shop_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/shop_list"
+        android:layout_below="@+id/shop_list"
+        android:layout_marginTop="26dp"
+        android:text="20¥"
+        android:textColor="@color/text_normal_color"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_shop_money"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/tv_shop_money"
+        android:text="我的零花钱："
+        android:textColor="@color/text_normal_color"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_shopkeeper_dialog"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60sp"
+        android:paddingLeft="10dp"
+        android:gravity="center"
+        android:background="@drawable/shop_bubble_dialog"
+        android:textSize="16sp"
+        android:text="欢迎光临"
+        android:textColor="@color/text_normal_color" />
+
+    <ImageView
+        android:id="@+id/list_pointer_top"
+        android:layout_width="25dp"
+        android:layout_height="10dp"
+        android:layout_above="@+id/shop_list"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/triangle_pointer_top" />
+
+    <ImageView
+        android:id="@+id/list_pointer_bottom"
+        android:layout_width="25dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/shop_list"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/triangle_pointer_bottom" />
+
+</RelativeLayout>

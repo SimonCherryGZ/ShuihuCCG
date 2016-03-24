@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_note"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3e0b5"
+    tools:context="com.simoncherry.shuihuccg.fragment.NoteFragment" >
+
+    <View 
+        android:id="@+id/layout_tab_space"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"/>
+
+    <ListView
+        android:id="@+id/note_list"
+        android:layout_width="320dp"
+        android:layout_height="440dp"
+        android:layout_centerInParent="true"
+        android:paddingTop="40dp"
+        android:paddingBottom="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@drawable/information_background" >
+        
+    </ListView>
+    
+    <TextView
+        android:id="@+id/note_page_index"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:textSize="16sp"
+        android:text="1 / 2"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btn_clear_note"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/btn_selector"
+        android:textColor="@color/white"
+        android:text="CLEAR" />
+
+</RelativeLayout>

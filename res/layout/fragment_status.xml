@@ -1,0 +1,170 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_status_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3e0b5"
+    tools:context="${relativePackage}.${activityClass}" >
+    
+    <View 
+        android:id="@+id/layout_tab_space"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_player_status"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+		android:layout_centerHorizontal="true"
+        android:layout_above="@+id/layout_money"
+        android:layout_marginBottom="10dp"
+        android:background="#a0e0e0e0" >
+        
+        <ImageView
+            android:id="@+id/img_player_avatar"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/chara_player" />
+        
+        <LinearLayout
+	        android:layout_width="120dp"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginRight="40dp"
+	        android:orientation="vertical" >
+	
+	        <TextView
+	            android:id="@+id/tv_status_mood"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="5dp"
+	            android:paddingBottom="5dp"
+	            android:text="@string/status_mood"
+	            android:textColor="#333333"
+	            android:textSize="14sp" />
+	        
+	        <View 
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:background="#0c0c0c"/>
+	
+	        <TextView
+	            android:id="@+id/tv_status_popularity"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="5dp"
+	            android:paddingBottom="5dp"
+	            android:text="@string/status_popularity"
+	            android:textColor="#333333"
+	            android:textSize="14sp" />
+	        
+	        <View 
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:background="#0c0c0c"/>
+	        
+	        <TextView
+	            android:id="@+id/tv_status_study"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="5dp"
+	            android:paddingBottom="5dp"
+	            android:text="@string/status_study"
+	            android:textColor="#333333"
+	            android:textSize="14sp" />
+	        
+	        <View 
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:background="#0c0c0c"/>
+	
+	        <TextView
+	            android:id="@+id/tv_status_behavior"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="5dp"
+	            android:paddingBottom="5dp"
+	            android:text="@string/status_behavior"
+	            android:textColor="#333333"
+	            android:textSize="14sp" />
+	        
+	        <View 
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:background="#0c0c0c"/>
+	        
+	    </LinearLayout>
+
+    
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_clear_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/btn_clear" />
+    
+    <ListView
+        android:id="@+id/item_list"
+        android:layout_width="300dp"
+        android:layout_height="240dp"
+        android:layout_above="@+id/layout_tab_space"
+		android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="#a0e0e0e0"
+        android:divider="#c0c0c0"
+        android:dividerHeight="1dp" />
+
+    <LinearLayout
+        android:id="@+id/layout_money"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/item_list"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="#a0e0e0e0" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:text="@string/status_money"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_status_money"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:text="￥20"
+            android:textColor="@color/text_normal_color"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    
+    <TextView 
+        android:id="@+id/tv_item_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="200dp"
+        android:textColor="@color/text_normal_color"
+        android:textSize="20sp"
+        android:text="啊哦，书包空空如也"/>
+
+</RelativeLayout>

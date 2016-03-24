@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent"  
+    android:clickable="true"  
+    android:orientation="vertical"  
+    android:padding="20.0dip" >  
+  
+    <LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:layout_gravity="center"  
+        android:orientation="vertical"
+        android:background="@color/bg_normal_color" >  
+  
+        <RelativeLayout
+	        android:id="@+id/card_show_layout"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginTop="10dp"
+	        android:background="@color/bg_normal_color" >
+	
+	        <ImageView
+	            android:id="@+id/card_big"
+	            android:layout_width="120dp"
+	            android:layout_height="170dp"
+	            android:padding="10dp"
+	            android:layout_marginLeft="5dp"
+	            android:src="@drawable/default_card" />
+	        
+	        <View
+	            android:layout_width="match_parent"
+	            android:layout_height="30dp"
+	            android:layout_alignTop="@+id/card_big"
+	            android:layout_toRightOf="@+id/card_big"
+	            android:layout_marginTop="10dp"
+	            android:background="#bf0000"
+	            android:visibility="invisible" />
+	        
+	        <LinearLayout
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignTop="@+id/card_big"
+		        android:layout_toRightOf="@+id/card_big"
+		        android:layout_marginLeft="20dp"
+		        android:paddingRight="20dp"
+		        android:orientation="vertical" >
+		
+		        <TextView
+		            android:id="@+id/index"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:paddingTop="10dp"
+		            android:paddingBottom="7dp"
+		            android:text="@string/hero_index"
+		            android:textColor="#333333"
+		            android:textSize="16sp" />
+		
+		        <TextView
+		            android:id="@+id/star"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:paddingTop="7dp"
+		            android:paddingBottom="7dp"
+		            android:text="@string/hero_star"
+		            android:textColor="#333333"
+		            android:textSize="16sp" />
+		
+		        <TextView
+		            android:id="@+id/epithet"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:paddingTop="7dp"
+		            android:paddingBottom="7dp"
+		            android:text="@string/hero_epithet"
+		            android:textColor="#333333"
+		            android:textSize="16sp" />
+		
+		        <TextView
+		            android:id="@+id/name"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:paddingTop="7dp"
+		            android:paddingBottom="7dp"
+		            android:text="@string/hero_name"
+		            android:textColor="#333333"
+		            android:textSize="16sp" />
+		        
+		        <TextView
+		            android:id="@+id/value"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:paddingTop="7dp"
+		            android:paddingBottom="10dp"
+		            android:text="稀有度："
+		            android:textColor="#333333"
+		            android:textSize="16sp" />
+		    </LinearLayout>
+	    
+	    </RelativeLayout>
+	    
+        <View  
+            android:layout_width="match_parent"  
+            android:layout_height="1dp"  
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#ffd0d0d0" />
+          
+        <ListView
+            android:id="@+id/select_card_list"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/bg_normal_color" >
+            
+        </ListView>
+
+  
+        <View  
+            android:layout_width="match_parent"  
+            android:layout_height="1dp"  
+            android:background="#ffd0d0d0" />  
+  
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60.0dip"
+            android:layout_gravity="bottom"
+            android:background="@color/bg_normal_color"
+            android:gravity="center"
+            android:orientation="horizontal" >
+  
+            <Button  
+                android:id="@+id/btn_positive"  
+                android:layout_width="115dp"  
+                android:layout_height="40dp"
+                android:background="@drawable/btn_selector"  
+                android:gravity="center"  
+                android:textColor="#ffffff"
+                android:text="OK" />  
+                
+            <View
+                android:layout_width="30dp"
+                android:layout_height="fill_parent" />
+  
+            <Button  
+                android:id="@+id/btn_negative"  
+                android:layout_width="115dp"  
+                android:layout_height="40dp"  
+                android:background="@drawable/btn_selector"
+                android:gravity="center"  
+                android:textColor="#ffffff"
+                android:text="CANCEL" />  
+        </LinearLayout>  
+    </LinearLayout>  
+  
+</FrameLayout>  

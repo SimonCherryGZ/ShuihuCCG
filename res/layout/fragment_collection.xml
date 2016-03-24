@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3e0b5"
+    tools:context="${relativePackage}.${activityClass}" >
+    
+
+    <ImageView
+        android:id="@+id/book_inside"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/collectionbook_inside" />
+
+    <ImageButton
+        android:id="@+id/arrow_left"
+        android:layout_width="30dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/page_pointer_left"
+        android:scaleType="fitXY" />
+    
+    <ImageButton
+        android:id="@+id/arrow_right"
+        android:layout_width="30dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/page_pointer_right"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/page_pointer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_normal_color"
+        android:text="@string/page_pointer" />
+
+    <include
+        android:id="@+id/include5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/page_pointer"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="10dp"
+        layout="@layout/collection_item" />
+
+    <include
+        android:id="@+id/include6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/include5"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="70dp"
+        layout="@layout/collection_item" />
+
+    <include
+        android:id="@+id/include3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/include5"
+        android:layout_alignLeft="@+id/include5"
+        android:layout_marginBottom="10dp"
+        layout="@layout/collection_item" />
+    
+    <include
+        android:id="@+id/include4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/include3"
+        android:layout_alignRight="@+id/include6"
+        layout="@layout/collection_item" />
+
+    <include
+        android:id="@+id/include1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/include3"
+        android:layout_alignLeft="@+id/include5"
+        android:layout_marginBottom="10dp"
+        layout="@layout/collection_item" />
+
+    <include
+        android:id="@+id/include2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/include1"
+        android:layout_alignLeft="@+id/include6"
+        layout="@layout/collection_item" />
+
+</RelativeLayout>

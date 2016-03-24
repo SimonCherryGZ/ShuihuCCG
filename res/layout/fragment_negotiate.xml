@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_negotiate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.simoncherry.shuihuccg.fragment.NegotiateFragment" >
+    
+    <View 
+        android:id="@+id/layout_tab_space"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"/>
+    
+    <ImageView
+        android:id="@+id/img_player_avatar"
+        android:layout_width="100dp"
+        android:layout_height="155dp"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/layout_tab_space"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="50dp"
+        android:src="@drawable/chara_player" />
+
+    <ImageView
+        android:id="@+id/img_npc_avatar"
+        android:layout_width="100dp"
+        android:layout_height="155dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="50dp" />
+
+    <ImageView
+        android:id="@+id/btn_select_up"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="75dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/triangle_pointer_top" />
+    
+    <ImageView
+        android:id="@+id/btn_select_down"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/img_npc_avatar"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="75dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/triangle_pointer_bottom" />
+
+    <ImageView
+        android:id="@+id/img_player_card"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:layout_above="@+id/layout_tab_space"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="80dp" />
+    
+    <ImageView
+        android:id="@+id/img_npc_card"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="110dp" />
+
+    <Button
+        android:id="@+id/btn_exchange"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/btn_selector"
+        android:textColor="@color/white"
+        android:text="交换" />
+
+    <Button
+        android:id="@+id/btn_gamble"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btn_selector"
+        android:textColor="@color/white"
+        android:text="赌卡" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_back"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btn_random"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btn_back"
+        android:text="RANDOM"
+        android:visibility="invisible" />
+    
+    <TextView 
+        android:id="@+id/tv_player_dialog"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="150dp"
+        android:background="@drawable/shop_bubble_dialog"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:textSize="16sp"
+        android:text="要交换吗？"
+        android:textColor="@color/text_normal_color"
+        android:visibility="invisible" />
+
+    <TextView 
+        android:id="@+id/tv_npc_dialog"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/shop_bubble_dialog2"
+        android:gravity="center"
+        android:paddingRight="15dp"
+        android:textSize="16sp"
+        android:text="要交换吗？"
+        android:textColor="@color/text_normal_color"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btn_random"
+        android:text="ADD"
+        android:visibility="invisible" />
+
+</RelativeLayout>

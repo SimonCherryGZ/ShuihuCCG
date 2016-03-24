@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/item_img"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/item_1" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_img"
+        android:layout_alignLeft="@+id/item_img"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:text="@string/item_1"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/item_effect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/item_img"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:text="@string/item_1_effect"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/item_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/btn_buy"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:text="2￥"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btn_buy"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_selector"
+        android:textColor="#ffffff"
+        android:text="购入" />
+
+</RelativeLayout>

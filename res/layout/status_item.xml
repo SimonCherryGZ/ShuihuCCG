@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/item_img"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/item_1" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/item_img"
+        android:gravity="center"
+        android:paddingTop="16dp"
+        android:text="@string/item_1"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/item_effect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/item_name"
+        android:gravity="center"
+        android:paddingTop="16dp"
+        android:text="@string/item_1_effect"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:paddingTop="16dp"
+        android:text="x 1"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+</RelativeLayout>
