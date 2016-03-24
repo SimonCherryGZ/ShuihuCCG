@@ -88,18 +88,18 @@ public class ShopListAdapter extends BaseAdapter{
 				final ItemShowDialog.Builder builder = new ItemShowDialog.Builder(ctx);
 				builder.setItemName(item_name);
 				builder.setItemPrice(item_cost);
-				builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {  
+				builder.setPositiveButton(R.string.btn_general_positive, new DialogInterface.OnClickListener() {  
 		            public void onClick(DialogInterface dialog, int which) {  
  	
 		            	int my_money = globalTools.getPlayerMoney();
 		            	int total_price = builder.getTotalPrice();
 		            	if(total_price > my_money){
-		            		fragment_ctx.setShopkeeperDialog("钱不够呢");
+		            		fragment_ctx.setShopkeeperDialog(ctx.getString(R.string.shop_no_enough_money));
 		            		
 		            	} else{
 		            		globalTools.setPlayerMoney(my_money - total_price);
 		            		fragment_ctx.refreshShopMoney();
-		            		fragment_ctx.setShopkeeperDialog("谢谢惠顾");
+		            		fragment_ctx.setShopkeeperDialog(ctx.getString(R.string.shop_thanks));
 		            		
 		            		globalTools.PlaySystemClickSE(globalTools.SE_SHOP_CHARGE);
 		            		
@@ -129,9 +129,9 @@ public class ShopListAdapter extends BaseAdapter{
 		            }  
 		        });  
 		  
-		        builder.setNegativeButton("取消", new android.content.DialogInterface.OnClickListener() {  
+		        builder.setNegativeButton(R.string.btn_general_negative, new android.content.DialogInterface.OnClickListener() {  
                     public void onClick(DialogInterface dialog, int which) {
-                    	fragment_ctx.setShopkeeperDialog("欢迎光临");
+                    	fragment_ctx.setShopkeeperDialog(ctx.getString(R.string.shop_welcome));
                         dialog.dismiss();  
                     }  
                 });

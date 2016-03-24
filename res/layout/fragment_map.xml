@@ -115,7 +115,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="20dp"
-                android:src="@drawable/chara_player" >
+                android:src="@drawable/chara_0" >
             </ImageView>
                 
             <ImageView 
@@ -143,7 +143,7 @@
 	                android:layout_height="wrap_content"
 	                android:layout_marginLeft="10dp"
 	                android:layout_marginTop="5dp"
-	                android:text="@string/tester_name"
+	                android:text="@string/chara_name_0"
 	                android:textSize="20sp"
 	                android:textStyle="bold"
 	                android:textColor="@color/text_normal_color" />

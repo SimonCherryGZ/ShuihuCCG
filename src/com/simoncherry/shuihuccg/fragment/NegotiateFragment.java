@@ -165,7 +165,7 @@ public class NegotiateFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				final SelectCardDialog.Builder builder = new SelectCardDialog.Builder(getContext());
-				builder.setPositiveButton("确定", new DialogInterface.OnClickListener(){
+				builder.setPositiveButton(R.string.btn_general_positive, new DialogInterface.OnClickListener(){
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						player_card_index = builder.select_card_index;
@@ -174,7 +174,7 @@ public class NegotiateFragment extends Fragment {
 					}
 				});
 				
-				builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+				builder.setNegativeButton(R.string.btn_general_negative, new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						dialog.dismiss();
@@ -191,7 +191,7 @@ public class NegotiateFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				final SelectCardDialog.Builder builder = new SelectCardDialog.Builder(getContext());
-				builder.setPositiveButton("确定", new DialogInterface.OnClickListener(){
+				builder.setPositiveButton(R.string.btn_general_positive, new DialogInterface.OnClickListener(){
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						npc_card_index = builder.select_card_index;
@@ -200,7 +200,7 @@ public class NegotiateFragment extends Fragment {
 					}
 				});
 				
-				builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+				builder.setNegativeButton(R.string.btn_general_negative, new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						dialog.dismiss();
@@ -221,12 +221,12 @@ public class NegotiateFragment extends Fragment {
 				if(player_card_index != 0 && npc_card_index != 0){
 					
 					exchange_or_gamble = ACTION_EXCHANGE;
-					tv_player_dialog.setText("要交换吗？");
+					tv_player_dialog.setText(R.string.negotiate_ask_exchange);
 					tv_player_dialog.setVisibility(View.VISIBLE);
 					tv_player_dialog.startAnimation(player_dialog_anim);
 					
 				}else{
-					Toast.makeText(getContext(), "还没选好卡片", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getContext(), R.string.negotiate_no_card_warning, Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -239,12 +239,12 @@ public class NegotiateFragment extends Fragment {
 				if(player_card_index != 0 && npc_card_index != 0){			
 					
 					exchange_or_gamble = ACTION_GAMBLE;
-					tv_player_dialog.setText("要赌卡吗？");
+					tv_player_dialog.setText(R.string.negotiate_ask_gamble);
 					tv_player_dialog.setVisibility(View.VISIBLE);
 					tv_player_dialog.startAnimation(player_dialog_anim);	
 					
 				}else{
-					Toast.makeText(getContext(), "还没选好卡片", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getContext(), R.string.negotiate_no_card_warning, Toast.LENGTH_SHORT).show();
 				}
 			}	
 		});
@@ -361,9 +361,9 @@ public class NegotiateFragment extends Fragment {
 				    	if(exchange_or_gamble == ACTION_EXCHANGE){
 				    		
 				    		if(yes_or_no == ANSWER_YES){
-				    			tv_npc_dialog.setText("行，成交");
+				    			tv_npc_dialog.setText(R.string.negotiate_answer_exchange_yes);
 				    		}else{
-				    			tv_npc_dialog.setText("呃，不要");
+				    			tv_npc_dialog.setText(R.string.negotiate_answer_exchange_no);
 				    		}
 				    		tv_npc_dialog.setVisibility(View.VISIBLE);
 				    		tv_npc_dialog.startAnimation(npc_dialog_anim);
@@ -371,9 +371,9 @@ public class NegotiateFragment extends Fragment {
 				    	}else if(exchange_or_gamble == ACTION_GAMBLE){
 				    		
 				    		if(yes_or_no == ANSWER_YES){
-				    			tv_npc_dialog.setText("好，来吧！");
+				    			tv_npc_dialog.setText(R.string.negotiate_answer_gamble_yes);
 				    		}else{
-				    			tv_npc_dialog.setText("呃，不要");
+				    			tv_npc_dialog.setText(R.string.negotiate_answer_gamble_no);
 				    		}
 				    		tv_npc_dialog.setVisibility(View.VISIBLE);
 				    		tv_npc_dialog.startAnimation(npc_dialog_anim);

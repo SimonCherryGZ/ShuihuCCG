@@ -27,7 +27,7 @@
 	            android:layout_height="170dp"
 	            android:padding="10dp"
 	            android:layout_marginLeft="5dp"
-	            android:src="@drawable/default_card" />
+	            android:src="@drawable/front0" />
 	        
 	        <View
 	            android:layout_width="match_parent"
@@ -93,7 +93,7 @@
 		            android:layout_height="wrap_content"
 		            android:paddingTop="7dp"
 		            android:paddingBottom="10dp"
-		            android:text="稀有度："
+		            android:text="@string/hero_value"
 		            android:textColor="#333333"
 		            android:textSize="16sp" />
 		    </LinearLayout>
@@ -136,7 +136,7 @@
                 android:background="@drawable/btn_selector"  
                 android:gravity="center"  
                 android:textColor="#ffffff"
-                android:text="OK" />  
+                android:text="@string/btn_general_positive" />  
                 
             <View
                 android:layout_width="30dp"
@@ -149,7 +149,7 @@
                 android:background="@drawable/btn_selector"
                 android:gravity="center"  
                 android:textColor="#ffffff"
-                android:text="CANCEL" />  
+                android:text="@string/btn_general_negative" />  
         </LinearLayout>  
     </LinearLayout>  
   

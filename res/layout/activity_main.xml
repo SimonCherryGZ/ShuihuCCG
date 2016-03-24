@@ -21,7 +21,7 @@
 	        android:layout_marginBottom="150dp"
 	        android:background="@drawable/btn_selector"
 	        android:textColor="@color/white"
-	        android:text="开始游戏"
+	        android:text="@string/sys_btn_start"
 	        android:visibility="invisible" />
 	    
 	    <Button
@@ -33,7 +33,7 @@
 	        android:layout_marginBottom="70dp"
 	        android:background="@drawable/btn_selector"
 	        android:textColor="@color/white"
-	        android:text="收 集 册"
+	        android:text="@string/sys_btn_collection"
 	        android:visibility="invisible" />
 	    
 	    <Button
@@ -100,7 +100,7 @@
 	        android:textColor="@color/white"
 	        android:textStyle="bold"
 	        android:textSize="40sp"
-	        android:text="水浒集卡乐"
+	        android:text="@string/sys_game_title"
 	        android:visibility="invisible" />
 	    
     </RelativeLayout>

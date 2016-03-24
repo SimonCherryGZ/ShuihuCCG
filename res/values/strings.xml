@@ -3,19 +3,50 @@
 
     <string name="app_name">水浒集卡乐</string>
     <string name="tv_loading">Now Loading</string>
-    <string name="btn_clear">清除数据</string>
-    <string name="tester_name">【王小明】</string>
-    <string name="tester_text_home">又要上学了  </string>
-    <string name="tester_text_schoolgate">到学校了 </string>
-    <string name="tester_text_classroom">呼，上课好累  </string>
-    <string name="tester_text_classroom_dusk">终于熬到放学了  </string>
-    <string name="tester_text_shop">先入点货再说  </string>
-    <string name="tester_text_shop_dusk">要不要买包干脆面呢  </string>
-    <string name="tester_text_bedroom">呼，做完作业了 </string>
+    <string name="dialog_clickable_hint">▼</string>
     <string name="tab_1">场景</string>
     <string name="tab_2">状态</string>
-    <string name="tab_3">情报</string>
+    <string name="tab_3">笔记</string>
     <string name="tab_4">收集</string>
+    <string name="btn_clear">清除数据</string>
+    
+    <string name="chara_name_0">王小明</string>
+    <string name="chara_name_1">暴龙哥</string>
+    <string name="chara_name_2">班长黎</string>
+    <string name="chara_name_3">阿蟹</string>
+    <string name="chara_name_4">阿真</string>
+    <string name="chara_name_5">靓仔鹏</string>
+    <string name="chara_name_6">Tony</string>
+    <string name="chara_name_7">霍小超</string>
+    <string name="chara_name_8">CHOK燊</string>
+    <string name="chara_name_9">B哥</string>
+    <string name="chara_name_10">刘小华</string>
+    <string name="chara_name_11">肥仔超</string>
+    <string name="chara_name_mother">母上</string>
+    <string name="chara_name_dean">主任</string>
+    <string name="chara_name_teacher">老师</string>
+    <string name="chara_name_girl">李小华</string>
+    <string name="chara_name_badguy">米奇老虎</string>
+    
+    <string name="prologue_bedroom_weekdays">呼，做完作业了</string>
+    <string name="prologue_bedroom_saturday">愉快的周六</string>
+    <string name="prologue_bedroom_sunday">哎，明天又要上学</string>
+    <string name="prologue_home_weekdays">又要上学了</string>
+    <string name="prologue_home_saturday">周六要上补习班</string>
+    <string name="prologue_home_sunday">周日不用上补习班</string>
+    <string name="prologue_schoolgate">到学校了</string>
+    <string name="prologue_classroom_morning">呼，上课好累</string>
+    <string name="prologue_classroom_dusk">终于熬到放学了</string>
+    <string name="prologue_shop_morning">先抽张卡片再说</string>
+    <string name="prologue_shop_dusk">要不要买包干脆面呢</string>
+    <string name="prologue_talk_news">看看有谁抽到了新卡片</string>
+    <string name="prologue_shop_sunday">愉快的周日，愉快地集卡</string>
+    <string name="prologue_exchange">谁有兴趣交换卡片呢</string>
+    <string name="prologue_cramschool_morning">不知来补习的同学有没有新卡片</string>
+    <string name="prologue_cramschool_dusk">呼，终于补完习</string>
+    <string name="prologue_another_shop">便利店抽的卡好像和小卖部不同</string>
+    <string name="prologue_alley">抄捷径不会有事吧</string>
+
     <string name="map_bedroom">部屋</string>
     <string name="map_home">玄关</string>
     <string name="map_schoolgate">校门</string>
@@ -23,20 +54,114 @@
     <string name="map_classroom_dusk">学校·放学后</string>
     <string name="map_shop_morning">小卖部·晨间</string>
     <string name="map_shop_dusk">小卖部·放学后</string>
-    <string name="dialog_clickable_hint">▼</string>
-    <string name="select_school">直接去学校</string>
-    <string name="select_school_later">赶回学校</string>
-    <string name="select_shop_morning">先绕道去小卖部</string>
-    <string name="select_classroom">进入教室</string>
-    <string name="select_talk">找同学聊天</string>
-    <string name="select_buy">购买零食</string>
-    <string name="select_exchange">交换卡片</string>
-    <string name="select_gamble">赌博卡片</string>
-    <string name="select_rest">等待上课</string>
-    <string name="select_study">回家学习</string>
-    <string name="select_shop">去小卖部</string>
-    <string name="select_home">回家</string>
-    <string name="select_sleep">睡觉</string>
+    <string name="map_cramschool_morning">补习班·课间</string>
+    <string name="map_cramschool_dusk">补习班·下课后</string>
+    <string name="map_another_shop">便利店·黄昏</string>
+    <string name="map_alley">小巷·黄昏</string>
+
+    <string name="bedroom_select_2">睡觉</string>
+    <string name="home_weekdays_select_2">直接去学校</string>
+    <string name="home_weekdays_select_3">先绕道去小卖部</string>
+    <string name="home_saturday_select_2">去补习班</string>
+    <string name="home_sunday_select_2">在家学习</string>
+    <string name="home_sunday_select_3">去小卖部</string>
+    <string name="schoolgate_select_2">进入教室</string>
+    <string name="classroom_morning_select_1">找同学聊天</string>
+    <string name="classroom_morning_select_2">交换卡片</string>
+    <string name="classroom_morning_select_3">等待上课</string>
+    <string name="classroom_dusk_select_2">去小卖部</string>
+    <string name="classroom_dusk_select_3">回家学习</string>
+    <string name="cramschool_morning_select_1">找同学聊天</string>
+    <string name="cramschool_morning_select_2">交换卡片</string>
+    <string name="cramschool_morning_select_3">等待上课</string>
+    <string name="cramschool_dusk_select_2">去便利店</string>
+    <string name="cramschool_dusk_select_3">回家</string>
+    <string name="shop_morning_select_2">购买零食</string>
+    <string name="shop_morning_select_3">赶回学校</string>
+    <string name="shop_dusk_select_1">找同学聊天</string>
+    <string name="shop_dusk_select_2">购买零食</string>
+    <string name="shop_dusk_select_3">交换卡片</string>
+    <string name="shop_dusk_select_4">回家</string>
+    <string name="shop_sunday_select_1">找同学聊天</string>
+    <string name="shop_sunday_select_2">购买零食</string>
+    <string name="shop_sunday_select_3">交换卡片</string>
+    <string name="shop_sunday_select_4">回家</string>
+    <string name="another_shop_select_2">购买零食</string>
+    <string name="another_shop_select_3">回家</string>
+    <string name="exchange_select_1">发起拍卖</string>
+    <string name="exchange_select_2">参与拍卖</string>
+    <string name="exchange_select_3">自由交换</string>
+    <string name="exchange_select_4">返回</string>
+    <string name="alley_select_2">回家</string>
+    
+    <string name="auction_host_ask">谁有兴趣？</string>
+    <string name="auction_welcome">有兴趣的话请选择卡片</string>
+    <string name="auction_no_card_warning">还没选择卡片！</string>
+    <string name="auction_host_see_card">"Show Me Your Card~"</string>
+    <string name="auction_host_want_better">有更好的吗？</string>
+    <string name="auction_npc_thinking">小伙伴们考虑中</string>
+    <string name="auction_nobody_like">杯具，没人感兴趣</string>
+    <string name="auction_no_suitable_card">啊哦，没有适合的卡片</string>
+    <string name="auction_host_deal">我选择\n No.</string>
+    <string name="auction_host_continue">还有别的卡哟</string>
+    <string name="auction_host_no_card">没有卡片了</string>
+    <string name="auction_wait_this_turn">等待该轮拍卖完成…</string>
+    <string name="auction_wait_remain_turn">等待剩余拍卖完成…</string>
+    <string name="auction_remain_turn_over">所有剩余拍卖已完成</string>
+    <string name="auction_btn_start">开拍</string>
+    <string name="auction_btn_exit">退出</string>
+    <string name="auction_btn_dissatisfied">不满意</string>
+    <string name="auction_btn_cancel">取消</string>
+    <string name="auction_btn_join">参与竞拍</string>
+    <string name="auction_btn_ignore">不参与</string>
+    <string name="auction_btn_confirm">选好了</string>
+    <string name="auction_btn_change_card">更改卡片</string>
+    <string name="auction_btn_wait_host">开始竞价</string>
+    <string name="auction_btn_next">下一轮</string>
+    <string name="auction_btn_change_host">换其他人</string>
+    <string name="auction_all_over">没有新的卡片了，竞拍结束</string>
+    <string name="auction_item_btn_deal">成交</string>
+    
+    <string name="battle_btn_pia">拍</string>
+    <string name="battle_btn_back">返回</string>
+    
+    <string name="luckydraw_bag_run_out">干脆面抽光了</string>
+    
+    <string name="negotiate_ask_exchange">要交换吗</string>
+    <string name="negotiate_ask_gamble">要赌卡吗</string>
+    <string name="negotiate_answer_exchange_yes">行，成交</string>
+    <string name="negotiate_answer_exchange_no">呃，不要</string>
+    <string name="negotiate_answer_gamble_yes">好，来吧！</string>
+    <string name="negotiate_answer_gamble_no">呃，不要</string>
+    <string name="negotiate_no_card_warning">还没选好卡片</string>
+    <string name="negotiate_btn_exchange">交换</string>
+    <string name="negotiate_btn_gamble">赌卡</string>
+    
+    <string name="note_new_card">刚刚抽到点新卡：\n</string>
+    <string name="note_new_card2">抽到了\n  No.</string>
+    <string name="note_no_news">好像没什么新发现</string>
+    <string name="note_del_warning">要删除这条笔记吗</string>
+    <string name="note_btn_clear_all">清除全部</string>
+    
+    <string name="shop_welcome">欢迎光临</string>
+    <string name="shop_thanks">谢谢惠顾</string>
+    <string name="shop_no_enough_money">钱不够呢</string>
+    <string name="shop_player_money">我的零花钱：</string>
+    <string name="shop_item_btn_buy">购入</string>
+    <string name="shop_item_dialog_total_price">总价：</string>
+    
+    <string name="status_item_empty">啊哦，书包空空如也</string>
+    <string name="status_item_use_warning"> 确定使用吗？</string>
+    
+    <string name="sys_game_title">水浒集卡乐</string>
+    <string name="sys_btn_start">开始游戏</string>
+    <string name="sys_btn_collection">收 集 册</string>
+    <string name="sys_general_title">系统提示</string>
+    <string name="sys_back_menu_warning">要回到主菜单吗</string>
+    <string name="sys_exit_game_warning">要退出游戏吗</string>
+    <string name="btn_general_positive">确定</string>
+    <string name="btn_general_negative">取消</string>
+    
     <string name="week1">星期一</string>
     <string name="week2">星期二</string>
     <string name="week3">星期三</string>
@@ -44,28 +169,34 @@
     <string name="week5">星期五</string>
     <string name="week6">星期六</string>
     <string name="week7">星期日</string>
+    
     <string name="status_mood">心情：</string>
     <string name="status_popularity">人气：</string>
     <string name="status_study">学力：</string>
     <string name="status_behavior">品行：</string>
     <string name="status_money">零花钱：</string>
     <string name="status_item">道具：</string>
+    
     <string name="item_0">干脆面</string>
     <string name="item_1">虾条</string>
     <string name="item_2">饼干</string>
     <string name="item_3">薯片</string>
     <string name="item_4">可乐</string>
+    
     <string name="item_0_effect">【抽水浒卡】</string>
-    <string name="item_1_effect">【心情+20】</string>
-    <string name="item_2_effect">【心情+10】</string>
-    <string name="item_3_effect">【心情+5】</string>
-    <string name="item_4_effect">【心情+1】</string>
+    <string name="item_1_effect">【心情+1】</string>
+    <string name="item_2_effect">【心情+5】</string>
+    <string name="item_3_effect">【心情+10】</string>
+    <string name="item_4_effect">【心情+20】</string>
+    
     <string name="numero">No.</string>
     <string name="page_pointer">1 / 18</string>
     <string name="hero_name">姓名：</string>
     <string name="hero_epithet">绰号：</string>
     <string name="hero_star">星宿：</string>
     <string name="hero_index">座次：</string>
+    <string name="hero_value">稀有：</string>
+    
     <string name="name1">宋江</string>
     <string name="name2">卢俊义</string>
     <string name="name3">吴用</string>
@@ -174,6 +305,7 @@
     <string name="name106">白胜</string>
     <string name="name107">时迁</string>
     <string name="name108">段景住</string>
+    
     <string name="epithet1">呼保义</string>
     <string name="epithet2">玉麒麟</string>
     <string name="epithet3">智多星</string>
@@ -282,6 +414,7 @@
     <string name="epithet106">白日鼠</string>
     <string name="epithet107">鼓上蚤</string>
     <string name="epithet108">金毛犬</string>
+    
     <string name="star1">天魁星</string>
     <string name="star2">天罡星</string>
     <string name="star3">天机星</string>
@@ -390,8 +523,7 @@
     <string name="star106">地耗星</string>
     <string name="star107">地贼星</string>
     <string name="star108">地狗星</string>
+    
     <string name="title_activity_main">MainActivity</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

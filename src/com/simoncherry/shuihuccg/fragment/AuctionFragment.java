@@ -133,20 +133,20 @@ public class AuctionFragment extends Fragment {
 							
 							if(auction_card_index != 0){
 								if(auction_round == 0){
-									tv_auction_dialog.setText("谁有兴趣？");
+									tv_auction_dialog.setText(R.string.auction_host_ask);
 									tv_auction_dialog.setVisibility(View.VISIBLE);
 									tv_auction_dialog.startAnimation(auction_dialog_anim);
-									btn_auction.setText("不满意");
-									btn_ignore.setText("取消");
+									btn_auction.setText(R.string.auction_btn_dissatisfied);
+									btn_ignore.setText(R.string.auction_btn_cancel);
 								}else{
-									tv_auction_dialog.setText("有更好的吗？");
+									tv_auction_dialog.setText(R.string.auction_host_want_better);
 									tv_auction_dialog.setVisibility(View.VISIBLE);
 									tv_auction_dialog.startAnimation(auction_dialog_anim);
 								}
 								auction_round++;
 								
 							}else{
-								Toast.makeText(getContext(), "还没选择卡片！", Toast.LENGTH_SHORT).show();
+								Toast.makeText(getContext(), R.string.auction_no_card_warning, Toast.LENGTH_SHORT).show();
 							}
 							break;
 							
@@ -158,8 +158,8 @@ public class AuctionFragment extends Fragment {
 							tv_card_value.setText(String.valueOf(0));
 							tv_auction_list_loading.setVisibility(View.INVISIBLE);
 							tv_auction_dialog.setVisibility(View.INVISIBLE);
-							btn_auction.setText("开拍");
-							btn_ignore.setText("退出");
+							btn_auction.setText(R.string.auction_btn_start);
+							btn_ignore.setText(R.string.auction_btn_exit);
 							btn_ignore.setVisibility(View.VISIBLE);
 							
 							if(list != null){
@@ -203,16 +203,16 @@ public class AuctionFragment extends Fragment {
 								int card_value = globalTools.calcCardValue(auction_card_index)/1000;
 								tv_card_value.setText(String.valueOf(card_value));	
 								
-								tv_auction_dialog.setText("谁有兴趣？");
+								tv_auction_dialog.setText(R.string.auction_host_ask);
 								tv_auction_dialog.setVisibility(View.VISIBLE);
 								tv_auction_dialog.startAnimation(auction_dialog_anim);
-								btn_auction.setText("参与竞拍");
-								btn_ignore.setText("不参与");	
+								btn_auction.setText(R.string.auction_btn_join);
+								btn_ignore.setText(R.string.auction_btn_ignore);	
 								auction_step = STEP_PLAYER_SELECT_CARD;
 								
 							}else{
 								btn_auction.setVisibility(View.INVISIBLE);
-								tv_auction_list_loading.setText("没有新的卡片了，竞拍结束");
+								tv_auction_list_loading.setText(R.string.auction_all_over);
 								tv_auction_list_loading.setVisibility(View.VISIBLE);
 								auction_step = STEP_ALL_DEAL_OVER;
 							}
@@ -222,7 +222,7 @@ public class AuctionFragment extends Fragment {
 						case STEP_PLAYER_SELECT_CARD :
 							
 							final SelectCardDialog.Builder builder = new SelectCardDialog.Builder(getContext());
-							builder.setPositiveButton("确定", new DialogInterface.OnClickListener(){
+							builder.setPositiveButton(R.string.btn_general_positive, new DialogInterface.OnClickListener(){
 								@Override
 								public void onClick(DialogInterface dialog, int which) {
 									int player_card_index = builder.select_card_index;
@@ -239,15 +239,15 @@ public class AuctionFragment extends Fragment {
 										IndexPosMap.put(player_card_index, auction_list.getCount()-1);
 									}
 									
-									btn_auction.setText("选好了");
-									btn_ignore.setText("更改卡片");
+									btn_auction.setText(R.string.auction_btn_confirm);
+									btn_ignore.setText(R.string.auction_btn_change_card);
 
 									auction_step = STEP_NPC_SELECT_CARD;
 									dialog.dismiss();
 								}
 							});
 							
-							builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+							builder.setNegativeButton(R.string.btn_general_negative, new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface dialog, int which) {
 									dialog.dismiss();
@@ -261,10 +261,10 @@ public class AuctionFragment extends Fragment {
 							
 						case STEP_NPC_SELECT_CARD :
 							
-							tv_auction_dialog.setText("Show Me Your Card~");
+							tv_auction_dialog.setText(R.string.auction_host_see_card);
 							tv_auction_dialog.setVisibility(View.VISIBLE);
 							tv_auction_dialog.startAnimation(auction_dialog_anim);
-							btn_auction.setText("开始竞价");
+							btn_auction.setText(R.string.auction_btn_wait_host);
 							btn_ignore.setVisibility(View.INVISIBLE);
 							break;
 							
@@ -272,11 +272,11 @@ public class AuctionFragment extends Fragment {
 							
 							boolean deal_success = hostSelecCardToDeal(auction_host_index, auction_card_index, true);
 							if(deal_success == false){
-								tv_auction_list_loading.setText("啊哦，没有适合的卡片");
+								tv_auction_list_loading.setText(R.string.auction_no_suitable_card);
 								tv_auction_list_loading.setVisibility(View.VISIBLE);
 								isHostWantToQuit = true;
 							}
-							btn_auction.setText("下一轮");
+							btn_auction.setText(R.string.auction_btn_next);
 							btn_ignore.setVisibility(View.INVISIBLE);
 							auction_step = STEP_THIS_DEAL_OVER;
 							break;
@@ -297,19 +297,19 @@ public class AuctionFragment extends Fragment {
 							img_new_logo.setVisibility(View.INVISIBLE);
 							tv_card_value.setText(String.valueOf(0));
 							
-							btn_auction.setText("开始");
-							btn_ignore.setText("退出");
+							btn_auction.setText(R.string.auction_btn_start);
+							btn_ignore.setText(R.string.auction_btn_exit);
 							btn_ignore.setVisibility(View.VISIBLE);
 							
 							auction_step = STEP_HOST_SELECT_CARD;
 							
 							int rare_card_count = globalTools.getRareCardCount(auction_host_index);
 							if(rare_card_count >= 1 && isHostWantToQuit == false){
-								tv_auction_dialog.setText("还有别的卡哟");
+								tv_auction_dialog.setText(R.string.auction_host_continue);
 								tv_auction_dialog.startAnimation(auction_dialog_anim);
 							}else{
-								btn_auction.setText("换其他人");
-								tv_auction_dialog.setText("没有卡片了");
+								btn_auction.setText(R.string.auction_btn_change_host);
+								tv_auction_dialog.setText(R.string.auction_host_no_card);
 								tv_auction_dialog.startAnimation(auction_dialog_anim);
 							}
 							break;
@@ -333,8 +333,8 @@ public class AuctionFragment extends Fragment {
 						tv_card_value.setText(String.valueOf(0));
 						tv_auction_list_loading.setVisibility(View.INVISIBLE);
 						tv_auction_dialog.setVisibility(View.INVISIBLE);
-						btn_auction.setText("开拍");
-						btn_ignore.setText("退出");
+						btn_auction.setText(R.string.auction_btn_start);
+						btn_ignore.setText(R.string.auction_btn_exit);
 						btn_ignore.setVisibility(View.VISIBLE);
 						
 						if(list != null){
@@ -350,7 +350,7 @@ public class AuctionFragment extends Fragment {
 					
 						case STEP_HOST_SELECT_CARD :
 							
-							tv_auction_list_loading.setText("等待剩余拍卖完成...");
+							tv_auction_list_loading.setText(R.string.auction_wait_remain_turn);
 							tv_auction_list_loading.setVisibility(View.VISIBLE);
 							btn_auction.setVisibility(View.INVISIBLE);
 							btn_ignore.setVisibility(View.INVISIBLE);
@@ -366,8 +366,8 @@ public class AuctionFragment extends Fragment {
 									valueCharaMap.clear();
 									charaIndexMap.clear();
 									IndexPosMap.clear();
-							    	tv_auction_list_loading.setText("所有剩余拍卖已完成");
-							    	btn_ignore.setText("退出");
+							    	tv_auction_list_loading.setText(R.string.auction_remain_turn_over);
+							    	btn_ignore.setText(R.string.auction_btn_exit);
 							    	btn_ignore.setVisibility(View.VISIBLE);
 							    	
 							    	auction_step = STEP_ALL_DEAL_OVER;
@@ -377,7 +377,7 @@ public class AuctionFragment extends Fragment {
 							
 						case STEP_PLAYER_SELECT_CARD :
 							
-							tv_auction_list_loading.setText("等待该轮拍卖完成...");
+							tv_auction_list_loading.setText(R.string.auction_wait_this_turn);
 							btn_auction.setVisibility(View.INVISIBLE);
 							btn_ignore.setVisibility(View.INVISIBLE);
 							
@@ -385,12 +385,12 @@ public class AuctionFragment extends Fragment {
 							    public void run() {
 									boolean deal_success = auctionWithoutPlayer(auction_host_index, auction_card_index);
 									if(deal_success == false){
-										tv_auction_list_loading.setText("啊哦，没有适合的卡片");
+										tv_auction_list_loading.setText(R.string.auction_no_suitable_card);
 										isHostWantToQuit = true;
 									}else{
 										tv_auction_list_loading.setVisibility(View.INVISIBLE);
 									}
-									btn_auction.setText("下一轮");
+									btn_auction.setText(R.string.auction_btn_next);
 									btn_auction.setVisibility(View.VISIBLE);
 									btn_ignore.setVisibility(View.INVISIBLE);
 
@@ -411,7 +411,7 @@ public class AuctionFragment extends Fragment {
 							IndexPosMap.clear();
 							
 							final SelectCardDialog.Builder builder = new SelectCardDialog.Builder(getContext());
-							builder.setPositiveButton("确定", new DialogInterface.OnClickListener(){
+							builder.setPositiveButton(R.string.btn_general_positive, new DialogInterface.OnClickListener(){
 								@Override
 								public void onClick(DialogInterface dialog, int which) {
 									int player_card_index = builder.select_card_index;
@@ -433,13 +433,13 @@ public class AuctionFragment extends Fragment {
 										IndexPosMap.put(player_card_index, auction_list.getCount()-1);
 									}
 									
-									btn_auction.setText("选好了");
-									btn_ignore.setText("更改卡片");
+									btn_auction.setText(R.string.auction_btn_confirm);
+									btn_ignore.setText(R.string.auction_btn_change_card);
 									dialog.dismiss();
 								}
 							});
 							
-							builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+							builder.setNegativeButton(R.string.btn_general_negative, new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface dialog, int which) {
 									dialog.dismiss();
@@ -470,7 +470,7 @@ public class AuctionFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				final SelectCardDialog.Builder builder = new SelectCardDialog.Builder(getContext());
-				builder.setPositiveButton("确定", new DialogInterface.OnClickListener(){
+				builder.setPositiveButton(R.string.btn_general_positive, new DialogInterface.OnClickListener(){
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						auction_card_index = builder.select_card_index;
@@ -479,9 +479,9 @@ public class AuctionFragment extends Fragment {
 						int card_value = globalTools.calcCardValue(auction_card_index)/1000;
 						tv_card_value.setText(String.valueOf(card_value));
 						tv_auction_list_loading.setVisibility(View.INVISIBLE);
-						tv_auction_dialog.setText("谁有兴趣？");
-						btn_auction.setText("开拍");
-						btn_ignore.setText("退出");
+						tv_auction_dialog.setText(R.string.auction_host_ask);
+						btn_auction.setText(R.string.auction_btn_start);
+						btn_ignore.setText(R.string.auction_btn_exit);
 						
 						if(list != null){
 							list.clear();
@@ -492,7 +492,7 @@ public class AuctionFragment extends Fragment {
 					}
 				});
 				
-				builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+				builder.setNegativeButton(R.string.btn_general_negative, new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						dialog.dismiss();
@@ -541,7 +541,7 @@ public class AuctionFragment extends Fragment {
 							list.clear();
 							adapter.notifyDataSetChanged();
 						}					
-						tv_auction_list_loading.setText("小伙伴们考虑中");
+						tv_auction_list_loading.setText(R.string.auction_npc_thinking);
 						tv_auction_list_loading.setVisibility(View.VISIBLE);
 						
 						new Thread(new Runnable() {
@@ -564,11 +564,11 @@ public class AuctionFragment extends Fragment {
 					
 				}else{
 					if(auction_step == STEP_PLAYER_SELECT_CARD){
-						tv_auction_list_loading.setText("有兴趣的话请选择卡片");
+						tv_auction_list_loading.setText(R.string.auction_welcome);
 						tv_auction_list_loading.setVisibility(View.VISIBLE);
 						
 					}else if(auction_step == STEP_NPC_SELECT_CARD){
-						tv_auction_list_loading.setText("小伙伴们考虑中");
+						tv_auction_list_loading.setText(R.string.auction_npc_thinking);
 						tv_auction_list_loading.setVisibility(View.VISIBLE);
 						
 						new Thread(new Runnable() {
@@ -644,7 +644,7 @@ public class AuctionFragment extends Fragment {
 		if(list.size() > 0){
 			tv_auction_list_loading.setVisibility(View.INVISIBLE);
 		}else{
-			tv_auction_list_loading.setText("杯具，没人感兴趣");
+			tv_auction_list_loading.setText(R.string.auction_nobody_like);
 		}
 		
 		tv_auction_dialog.setVisibility(View.INVISIBLE);
@@ -655,11 +655,15 @@ public class AuctionFragment extends Fragment {
 		AuctionListBean listbean = new AuctionListBean();
 		
 		String chara_name = "";
-		if(chara_index == 0){
-			chara_name = "【王小明】";
-		}else{
-			chara_name = "【电脑" + String.valueOf(chara_index) + "】";
-		}
+		
+//		if(chara_index == 0){
+//			chara_name = "【王小明】";
+//		}else{
+//			chara_name = "【电脑" + String.valueOf(chara_index) + "】";
+//		}
+		
+		chara_name = globalTools.getCharaName(chara_index);
+		
 		int img_id = globalTools.getCardImgId(card_index);
 		String epithet = globalTools.getCardInformation("epithet", card_index);
 		String name = globalTools.getCardInformation("name", card_index);
@@ -783,7 +787,7 @@ public class AuctionFragment extends Fragment {
 					adapter.notifyDataSetChanged();
 					auction_list.smoothScrollToPosition(deal_pos);
 					
-					tv_auction_dialog.setText("我选择\n No." + String.valueOf(deal_index));
+					tv_auction_dialog.setText(getString(R.string.auction_host_deal) + String.valueOf(deal_index));
 					tv_auction_dialog.setVisibility(View.VISIBLE);
 					tv_auction_dialog.startAnimation(auction_dialog_anim);
 				}
@@ -852,11 +856,11 @@ public class AuctionFragment extends Fragment {
 		list.get(pos).setItemHint(true);
 		adapter.notifyDataSetChanged();
 		
-		tv_auction_dialog.setText("我选择\n No." + String.valueOf(enemy_card_index));
+		tv_auction_dialog.setText(getString(R.string.auction_host_deal) + String.valueOf(enemy_card_index));
 		tv_auction_dialog.setVisibility(View.VISIBLE);
 		tv_auction_dialog.startAnimation(auction_dialog_anim);
 		
-		btn_auction.setText("下一轮");
+		btn_auction.setText(R.string.auction_btn_next);
 		btn_ignore.setVisibility(View.INVISIBLE);
 		//isDealOK = true;
 		auction_step = STEP_THIS_DEAL_OVER;

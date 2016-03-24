@@ -225,17 +225,21 @@ public class MainActivity extends FragmentActivity implements
         {  
         	if (isMainMenu == true){
 	            AlertDialog isExit = new AlertDialog.Builder(this).create();  
-	            isExit.setTitle("系统提示");  
-	            isExit.setMessage("要退出游戏吗");
-	            isExit.setButton(DialogInterface.BUTTON_POSITIVE, "确定", listener);
-	            isExit.setButton(DialogInterface.BUTTON_NEGATIVE, "取消", listener);
+	            isExit.setTitle(getString(R.string.sys_general_title));  
+	            isExit.setMessage(getString(R.string.sys_exit_game_warning));
+	            isExit.setButton(DialogInterface.BUTTON_POSITIVE,
+	            		getString(R.string.btn_general_positive), listener);
+	            isExit.setButton(DialogInterface.BUTTON_NEGATIVE,
+	            		getString(R.string.btn_general_negative), listener);
 	            isExit.show();  
         	} else {
         		AlertDialog isExit = new AlertDialog.Builder(this).create();  
-	            isExit.setTitle("系统提示");  
-	            isExit.setMessage("要回到主菜单吗");
-	            isExit.setButton(DialogInterface.BUTTON_POSITIVE, "确定", listener);
-	            isExit.setButton(DialogInterface.BUTTON_NEGATIVE, "取消", listener);
+	            isExit.setTitle(getString(R.string.sys_general_title));  
+	            isExit.setMessage(getString(R.string.sys_back_menu_warning));
+	            isExit.setButton(DialogInterface.BUTTON_POSITIVE,
+	            		getString(R.string.btn_general_positive), listener);
+	            isExit.setButton(DialogInterface.BUTTON_NEGATIVE,
+	            		getString(R.string.btn_general_negative), listener);
 	            isExit.show();
         	}
         }  

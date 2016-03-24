@@ -46,6 +46,6 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/btn_selector"
         android:textColor="@color/white"
-        android:text="CLEAR" />
+        android:text="@string/note_btn_clear_all" />
 
 </RelativeLayout>

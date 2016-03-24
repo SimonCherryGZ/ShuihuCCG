@@ -130,7 +130,7 @@ public class LuckyDrawFragment extends Fragment {
 					img_noodle_bag.startAnimation(bag_anim);
 					
 				}else{
-					Toast.makeText(getContext(), "干脆面抽光了", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getContext(), R.string.luckydraw_bag_run_out, Toast.LENGTH_SHORT).show();
 				}
 			}
         });

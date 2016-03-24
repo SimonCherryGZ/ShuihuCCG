@@ -29,7 +29,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/chara_player" />
+            android:src="@drawable/chara_0" />
         
         <LinearLayout
 	        android:layout_width="120dp"
@@ -165,6 +165,6 @@
         android:layout_marginBottom="200dp"
         android:textColor="@color/text_normal_color"
         android:textSize="20sp"
-        android:text="啊哦，书包空空如也"/>
+        android:text="@string/status_item_empty"/>
 
 </RelativeLayout>

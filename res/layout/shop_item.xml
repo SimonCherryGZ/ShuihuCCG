@@ -56,6 +56,6 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/btn_selector"
         android:textColor="#ffffff"
-        android:text="购入" />
+        android:text="@string/shop_item_btn_buy" />
 
 </RelativeLayout>

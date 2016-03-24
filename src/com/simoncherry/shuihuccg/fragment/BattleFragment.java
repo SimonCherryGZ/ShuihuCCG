@@ -152,7 +152,7 @@ public class BattleFragment extends Fragment {
 					btn_battle.setVisibility(View.INVISIBLE);
 				}else{
 					is_battle_over = false;
-					btn_battle.setText("拍");
+					btn_battle.setText(R.string.battle_btn_pia);
 					btn_battle.setClickable(true);
 					btn_battle.setVisibility(View.VISIBLE);
 					
@@ -412,7 +412,7 @@ public class BattleFragment extends Fragment {
 					img_battle_result.setVisibility(View.VISIBLE);
 					img_battle_result.startAnimation(battle_result_anim);
 					is_battle_over = true;
-					btn_battle.setText("返回");
+					btn_battle.setText(R.string.battle_btn_back);
 					
 					// TODO
 //					battle_listener.changeCardList(0, enemy_card_index, 1);
@@ -430,7 +430,7 @@ public class BattleFragment extends Fragment {
 					img_battle_result.setVisibility(View.VISIBLE);
 					img_battle_result.startAnimation(battle_result_anim);
 					is_battle_over = true;
-					btn_battle.setText("返回");
+					btn_battle.setText(R.string.battle_btn_back);
 					
 					// TODO
 //					battle_listener.changeCardList(0, player_card_index, -1);

@@ -120,7 +120,7 @@ public class MapFragment extends Fragment {
 	final static int EVENT_GIFT_CARD = 20;
 	final static int EVENT_BADGUY = 21;
 	
-	final static int AVATAR_PLAYER = R.drawable.chara_player;
+	final static int AVATAR_PLAYER = R.drawable.chara_0;
 	final static int AVATAR_DEAN = R.drawable.chara_dean;
 	final static int AVATAR_TEACHER = R.drawable.chara_teacher;
 	final static int AVATAR_MOTHER = R.drawable.chara_mother;
@@ -252,19 +252,19 @@ public class MapFragment extends Fragment {
 				break;
 			case SCENE_CRAM_SCHOOL_MORNING :
 				layout_map_bg.setBackgroundResource(R.drawable.map_cram_school_morning);
-				tv_map_scene.setText("补习班·课间");
+				tv_map_scene.setText(R.string.map_cramschool_morning);
 				break;
 			case SCENE_CRAM_SCHOOL_DUSK :
 				layout_map_bg.setBackgroundResource(R.drawable.map_cram_school_dusk);
-				tv_map_scene.setText("补习班·下课后");
+				tv_map_scene.setText(R.string.map_cramschool_dusk);
 				break;
 			case SCENE_ANOTHER_SHOP :
 				layout_map_bg.setBackgroundResource(R.drawable.map_another_shop);
-				tv_map_scene.setText("便利店·黄昏");
+				tv_map_scene.setText(R.string.map_another_shop);
 				break;
 			case SCENE_ALLEY :
 				layout_map_bg.setBackgroundResource(R.drawable.map_alley);
-				tv_map_scene.setText("小巷·黄昏");
+				tv_map_scene.setText(R.string.map_alley);
 				break;
 		}
 	}
@@ -636,7 +636,7 @@ public class MapFragment extends Fragment {
 				globalTools.PlaySystemClickSE(globalTools.SE_SYSTEM_CLICK);
 				
 				if(dialog_index < dialog_count){
-					if(list_avatar.get(dialog_index) == R.drawable.chara_player){
+					if(list_avatar.get(dialog_index) == R.drawable.chara_0){
 						dialog_player_avatar.setImageResource(list_avatar.get(dialog_index));
 						dialog_player_avatar.setVisibility(View.VISIBLE);
 						dialog_computer_avatar.setVisibility(View.INVISIBLE);
@@ -645,7 +645,7 @@ public class MapFragment extends Fragment {
 						dialog_computer_avatar.setImageResource(list_avatar.get(dialog_index));
 						dialog_computer_avatar.setVisibility(View.VISIBLE);
 					}
-					dialog_chara_name.setText(list_name.get(dialog_index));
+					dialog_chara_name.setText("【" + list_name.get(dialog_index) + "】");
 					dialog_text.start(list_dialog.get(dialog_index));
 					dialog_index++;
 				}else{
@@ -653,8 +653,8 @@ public class MapFragment extends Fragment {
 					layout_dialog.setVisibility(View.INVISIBLE);
 					dialog_player_avatar.setVisibility(View.VISIBLE);
 					dialog_computer_avatar.setVisibility(View.INVISIBLE);
-					dialog_player_avatar.setImageResource(R.drawable.chara_player);
-					dialog_chara_name.setText(R.string.tester_name);
+					dialog_player_avatar.setImageResource(R.drawable.chara_0);
+					dialog_chara_name.setText("【" + getString(R.string.chara_name_0) + "】");
 					layout_dialog_text.setClickable(false);
 					// TODO
 					if(is_show_event_result == false){
@@ -665,6 +665,8 @@ public class MapFragment extends Fragment {
 				}
 			}
 		});
+		
+		dialog_chara_name.setText("【" + getString(R.string.chara_name_0) + "】");
 		
 		InitAnimation();
 	}
@@ -821,130 +823,130 @@ public class MapFragment extends Fragment {
 	
 	private void setSelector(int scene){
 		switch(scene){
-			case SCENE_CLASSROOM_MORNING :
-				selector_1.setVisibility(View.VISIBLE);
-				selector_1.setText(R.string.select_talk);
-				selector_2.setVisibility(View.VISIBLE);
-				selector_2.setText(R.string.select_exchange);
-				selector_3.setVisibility(View.VISIBLE);
-				selector_3.setText(R.string.select_rest);
-				selector_4.setVisibility(View.INVISIBLE);
-				break;
-			case SCENE_CLASSROOM_DUSK :
-				selector_1.setVisibility(View.INVISIBLE);
-				selector_2.setText(R.string.select_shop);
-				selector_2.setVisibility(View.VISIBLE);
-				selector_3.setText(R.string.select_study);
-				selector_3.setVisibility(View.VISIBLE);
-				selector_4.setVisibility(View.INVISIBLE);
-				break;
-			case SCENE_SHOP_MORNING :
-				selector_1.setVisibility(View.INVISIBLE);
-				selector_2.setText(R.string.select_buy);
-				selector_2.setVisibility(View.VISIBLE);
-				selector_3.setText(R.string.select_school_later);
-				selector_3.setVisibility(View.VISIBLE);
-				selector_4.setVisibility(View.INVISIBLE);
-				break;
-			case SCENE_SHOP_DUSK :
-				selector_1.setVisibility(View.VISIBLE);
-				selector_1.setText(R.string.select_talk);
-				selector_2.setVisibility(View.VISIBLE);
-				selector_2.setText(R.string.select_buy);
-				selector_3.setVisibility(View.VISIBLE);
-				selector_3.setText(R.string.select_exchange);
-				selector_4.setVisibility(View.VISIBLE);
-				selector_4.setText(R.string.select_home);
-				break;
 			case SCENE_BEDROOM_WEEKDAYS :
 			case SCENE_BEDROOM_SATURDAY :
 			case SCENE_BEDROOM_SUNDAY :
 				selector_1.setVisibility(View.INVISIBLE);
 				selector_2.setVisibility(View.VISIBLE);
-				selector_2.setText(R.string.select_sleep);
+				selector_2.setText(R.string.bedroom_select_2);
 				selector_3.setVisibility(View.INVISIBLE);
 				selector_4.setVisibility(View.INVISIBLE);
 				break;
 			case SCENE_HOME_WEEKDAYS :
 				selector_1.setVisibility(View.INVISIBLE);
 				selector_2.setVisibility(View.VISIBLE);
-				selector_2.setText(R.string.select_school);
+				selector_2.setText(R.string.home_weekdays_select_2);
 				selector_3.setVisibility(View.VISIBLE);
-				selector_3.setText(R.string.select_shop_morning);
+				selector_3.setText(R.string.home_weekdays_select_3);
+				selector_4.setVisibility(View.INVISIBLE);
+				break;
+			case SCENE_HOME_SATURDAY :
+				selector_1.setVisibility(View.INVISIBLE);
+				selector_2.setVisibility(View.VISIBLE);
+				selector_2.setText(R.string.home_saturday_select_2);
+				selector_3.setVisibility(View.INVISIBLE);
+				selector_4.setVisibility(View.INVISIBLE);
+				break;
+			case SCENE_HOME_SUNDAY :
+				selector_1.setVisibility(View.INVISIBLE);
+				selector_2.setText(R.string.home_sunday_select_2);
+				selector_2.setVisibility(View.VISIBLE);
+				selector_3.setText(R.string.home_sunday_select_3);
+				selector_3.setVisibility(View.VISIBLE);
 				selector_4.setVisibility(View.INVISIBLE);
 				break;
 			case SCENE_SCHOOLGATE :
 				selector_1.setVisibility(View.INVISIBLE);
 				selector_2.setVisibility(View.VISIBLE);
-				selector_2.setText(R.string.select_classroom);
+				selector_2.setText(R.string.schoolgate_select_2);
 				selector_3.setVisibility(View.INVISIBLE);
+				selector_4.setVisibility(View.INVISIBLE);
+				break;
+			case SCENE_CLASSROOM_MORNING :
+				selector_1.setVisibility(View.VISIBLE);
+				selector_1.setText(R.string.classroom_morning_select_1);
+				selector_2.setVisibility(View.VISIBLE);
+				selector_2.setText(R.string.classroom_morning_select_2);
+				selector_3.setVisibility(View.VISIBLE);
+				selector_3.setText(R.string.classroom_morning_select_3);
+				selector_4.setVisibility(View.INVISIBLE);
+				break;
+			case SCENE_CLASSROOM_DUSK :
+				selector_1.setVisibility(View.INVISIBLE);
+				selector_2.setText(R.string.classroom_dusk_select_2);
+				selector_2.setVisibility(View.VISIBLE);
+				selector_3.setText(R.string.classroom_dusk_select_3);
+				selector_3.setVisibility(View.VISIBLE);
+				selector_4.setVisibility(View.INVISIBLE);
+				break;
+			case SCENE_CRAM_SCHOOL_MORNING :
+				selector_1.setVisibility(View.VISIBLE);
+				selector_1.setText(R.string.cramschool_morning_select_1);
+				selector_2.setVisibility(View.VISIBLE);
+				selector_2.setText(R.string.cramschool_morning_select_2);
+				selector_3.setVisibility(View.VISIBLE);
+				selector_3.setText(R.string.cramschool_morning_select_3);
+				selector_4.setVisibility(View.INVISIBLE);
+				break;
+			case SCENE_CRAM_SCHOOL_DUSK :
+				selector_1.setVisibility(View.INVISIBLE);
+				selector_2.setText(R.string.cramschool_dusk_select_2);
+				selector_2.setVisibility(View.VISIBLE);
+				selector_3.setText(R.string.cramschool_dusk_select_3);
+				selector_3.setVisibility(View.VISIBLE);
+				selector_4.setVisibility(View.INVISIBLE);
+				break;
+			case SCENE_SHOP_MORNING :
+				selector_1.setVisibility(View.INVISIBLE);
+				selector_2.setText(R.string.shop_morning_select_2);
+				selector_2.setVisibility(View.VISIBLE);
+				selector_3.setText(R.string.shop_morning_select_3);
+				selector_3.setVisibility(View.VISIBLE);
+				selector_4.setVisibility(View.INVISIBLE);
+				break;
+			case SCENE_SHOP_DUSK :
+				selector_1.setVisibility(View.VISIBLE);
+				selector_1.setText(R.string.shop_dusk_select_1);
+				selector_2.setVisibility(View.VISIBLE);
+				selector_2.setText(R.string.shop_dusk_select_2);
+				selector_3.setVisibility(View.VISIBLE);
+				selector_3.setText(R.string.shop_dusk_select_3);
+				selector_4.setVisibility(View.VISIBLE);
+				selector_4.setText(R.string.shop_dusk_select_4);
+				break;
+			case SCENE_SHOP_SUNDAY :
+				selector_1.setVisibility(View.VISIBLE);
+				selector_1.setText(R.string.shop_sunday_select_1);
+				selector_2.setVisibility(View.VISIBLE);
+				selector_2.setText(R.string.shop_sunday_select_2);
+				selector_3.setVisibility(View.VISIBLE);
+				selector_3.setText(R.string.shop_sunday_select_3);
+				selector_4.setVisibility(View.VISIBLE);
+				selector_4.setText(R.string.shop_sunday_select_4);
+				break;
+			case SCENE_ANOTHER_SHOP :
+				selector_1.setVisibility(View.INVISIBLE);
+				selector_2.setText(R.string.another_shop_select_2);
+				selector_2.setVisibility(View.VISIBLE);
+				selector_3.setText(R.string.another_shop_select_3);
+				selector_3.setVisibility(View.VISIBLE);
 				selector_4.setVisibility(View.INVISIBLE);
 				break;
 			case SCENE_EXCHANGE_CLASSROOM :
 			case SCENE_EXCHANGE_SHOP : 
 			case SCENE_EXCHANGE_SHOP_SUNDAY : 
 				selector_1.setVisibility(View.VISIBLE);
-				selector_1.setText("发起拍卖");
+				selector_1.setText(R.string.exchange_select_1);
 				selector_2.setVisibility(View.VISIBLE);
-				selector_2.setText("参与拍卖");
+				selector_2.setText(R.string.exchange_select_2);
 				selector_3.setVisibility(View.VISIBLE);
-				selector_3.setText("自由交换");
+				selector_3.setText(R.string.exchange_select_3);
 				selector_4.setVisibility(View.VISIBLE);
-				selector_4.setText("返回");
-				break;
-			case SCENE_HOME_SATURDAY :
-				selector_1.setVisibility(View.INVISIBLE);
-				selector_2.setVisibility(View.VISIBLE);
-				selector_2.setText("去补习班");
-				selector_3.setVisibility(View.INVISIBLE);
-				selector_4.setVisibility(View.INVISIBLE);
-				break;
-			case SCENE_CRAM_SCHOOL_MORNING :
-				selector_1.setVisibility(View.VISIBLE);
-				selector_1.setText("跟同学聊天");
-				selector_2.setVisibility(View.VISIBLE);
-				selector_2.setText("交换卡片");
-				selector_3.setVisibility(View.VISIBLE);
-				selector_3.setText("等待上课");
-				selector_4.setVisibility(View.INVISIBLE);
-				break;
-			case SCENE_CRAM_SCHOOL_DUSK :
-				selector_1.setVisibility(View.INVISIBLE);
-				selector_2.setText("去便利店");
-				selector_2.setVisibility(View.VISIBLE);
-				selector_3.setText("回家");
-				selector_3.setVisibility(View.VISIBLE);
-				selector_4.setVisibility(View.INVISIBLE);
-				break;
-			case SCENE_ANOTHER_SHOP :
-				selector_1.setVisibility(View.INVISIBLE);
-				selector_2.setText(R.string.select_buy);
-				selector_2.setVisibility(View.VISIBLE);
-				selector_3.setText("回家");
-				selector_3.setVisibility(View.VISIBLE);
-				selector_4.setVisibility(View.INVISIBLE);
-				break;
-			case SCENE_HOME_SUNDAY :
-				selector_1.setVisibility(View.INVISIBLE);
-				selector_2.setText("在家学习");
-				selector_2.setVisibility(View.VISIBLE);
-				selector_3.setText("去小卖部");
-				selector_3.setVisibility(View.VISIBLE);
-				selector_4.setVisibility(View.INVISIBLE);
-				break;
-			case SCENE_SHOP_SUNDAY :
-				selector_1.setVisibility(View.VISIBLE);
-				selector_1.setText("跟同学聊天");
-				selector_2.setVisibility(View.VISIBLE);
-				selector_2.setText("购买零食");
-				selector_3.setVisibility(View.VISIBLE);
-				selector_3.setText("交换卡片");
-				selector_4.setVisibility(View.VISIBLE);
-				selector_4.setText("回家");
+				selector_4.setText(R.string.exchange_select_4);
 				break;
 			case SCENE_ALLEY :
 				selector_1.setVisibility(View.INVISIBLE);
-				selector_2.setText("回家");
+				selector_2.setText(R.string.alley_select_2);
 				selector_2.setVisibility(View.VISIBLE);
 				selector_3.setVisibility(View.INVISIBLE);
 				selector_4.setVisibility(View.INVISIBLE);
@@ -954,66 +956,65 @@ public class MapFragment extends Fragment {
 	
 	private void showPrologue(int scene, int event){
 		switch(scene){
-		
+			case SCENE_BEDROOM_WEEKDAYS:
+				dialog_text.start(getString(R.string.prologue_bedroom_weekdays));
+				break;	
+			case SCENE_BEDROOM_SATURDAY :
+				dialog_text.start(getString(R.string.prologue_bedroom_saturday));
+				break;
+			case SCENE_BEDROOM_SUNDAY :
+				dialog_text.start(getString(R.string.prologue_bedroom_sunday));
+				break;	
 			case SCENE_HOME_WEEKDAYS:
-				dialog_text.start(getString(R.string.tester_text_home));
+				dialog_text.start(getString(R.string.prologue_home_weekdays));
+				break;
+			case SCENE_HOME_SATURDAY :
+				dialog_text.start(getString(R.string.prologue_home_saturday));
+				break;
+			case SCENE_HOME_SUNDAY :
+				dialog_text.start(getString(R.string.prologue_home_sunday));
 				break;
 			case SCENE_SCHOOLGATE:
-				dialog_text.start(getString(R.string.tester_text_schoolgate));
+				dialog_text.start(getString(R.string.prologue_schoolgate));
 				break;
 			case SCENE_CLASSROOM_MORNING:
-				dialog_text.start(getString(R.string.tester_text_classroom));
+				dialog_text.start(getString(R.string.prologue_classroom_morning));
 				break;
 			case SCENE_CLASSROOM_DUSK:
-				dialog_text.start(getString(R.string.tester_text_classroom_dusk));
+				dialog_text.start(getString(R.string.prologue_classroom_dusk));
 				break;
 			case SCENE_SHOP_MORNING:
-				dialog_text.start(getString(R.string.tester_text_shop));
+				dialog_text.start(getString(R.string.prologue_shop_morning));
 				break;
 			case SCENE_SHOP_DUSK:
-				dialog_text.start(getString(R.string.tester_text_shop_dusk));
+				dialog_text.start(getString(R.string.prologue_shop_dusk));
 				break;
-			case SCENE_BEDROOM_WEEKDAYS:
-				dialog_text.start(getString(R.string.tester_text_bedroom));
+			case SCENE_SHOP_SUNDAY :
+				dialog_text.start(getString(R.string.prologue_shop_sunday));
 				break;
 			case SCENE_TALK_CLASSROOM :
 			case SCENE_TALK_SHOP :
 			case SCENE_TALK_CRAMSCHOOL :
-				dialog_text.start("不知有没有人抽到新卡片");
+				dialog_text.start(getString(R.string.prologue_talk_news));
 				break;
 			case SCENE_EXCHANGE_CLASSROOM :
 			case SCENE_EXCHANGE_SHOP:
 			case SCENE_EXCHANGE_CRAMSCHOOL :
 			case SCENE_EXCHANGE_SHOP_SUNDAY :
-				dialog_text.start("看看有没有人在交换卡片");
-				break;
-			case SCENE_HOME_SATURDAY :
-				dialog_text.start("补习班那边好像有新卡片");
+				dialog_text.start(getString(R.string.prologue_exchange));
 				break;
 			case SCENE_CRAM_SCHOOL_MORNING :
-				dialog_text.start("不知来补习的同学有没有带卡片");
+				dialog_text.start(getString(R.string.prologue_cramschool_morning));
 				break;
 			case SCENE_CRAM_SCHOOL_DUSK :
-				dialog_text.start("呼，终于下课了");
+				dialog_text.start(getString(R.string.prologue_cramschool_dusk));
 				break;
 			case SCENE_ANOTHER_SHOP :
-				dialog_text.start("便利店抽的卡好像和小卖部不同");
+				dialog_text.start(getString(R.string.prologue_another_shop));
 				break;
 			case SCENE_ALLEY :
-				dialog_text.start("不早了，抄捷径不会有事吧");
+				dialog_text.start(getString(R.string.prologue_alley));
 				break;	
-			case SCENE_BEDROOM_SATURDAY :
-				dialog_text.start("愉快的周六");
-				break;
-			case SCENE_HOME_SUNDAY :
-				dialog_text.start("周日不用上补习");
-				break;
-			case SCENE_SHOP_SUNDAY :
-				dialog_text.start("愉快的周日，愉快地集卡");
-				break;
-			case SCENE_BEDROOM_SUNDAY :
-				dialog_text.start("哎，明天又要上学");
-				break;
 		}
 	}
 	
@@ -1025,38 +1026,38 @@ public class MapFragment extends Fragment {
 			case EVENT_WEEKLY_MONEY :
 				int income = globalTools.getPlayerIncome();
 				list_avatar.add(AVATAR_MOTHER);
-				list_name.add("【母上】");
+				list_name.add(getString(R.string.chara_name_mother));
 				list_dialog.add("今天的零花钱  " + String.valueOf(income) + "¥");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("谢谢");
 				break;
 			case EVENT_AT_TIME_SCHOOL :
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("时间还早，回课室预习下吧 ");
 				list_avatar.add(AVATAR_DEAN);
-				list_name.add("【老师】");
+				list_name.add(getString(R.string.chara_name_dean));
 				list_dialog.add("没有迟到，很好");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("废话，老子外号江南西小速龙");
 				list_avatar.add(AVATAR_DEAN);
-				list_name.add("【老师】");
-				list_dialog.add("快滚进教室 ");
+				list_name.add(getString(R.string.chara_name_dean));
+				list_dialog.add("快进教室 ");
 				break;
 			case EVENT_LATE_FOR_SCHOOL :
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("不知道迟到了没 ");
 				list_avatar.add(AVATAR_DEAN);
-				list_name.add("【老师】");
+				list_name.add(getString(R.string.chara_name_dean));
 				list_dialog.add("你很沙胆啵，竟敢迟到");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("迟到总好过没到 ");
 				list_avatar.add(AVATAR_DEAN);
-				list_name.add("【老师】");
+				list_name.add(getString(R.string.chara_name_dean));
 				list_dialog.add("快滚进教室");
 				break;
 			case EVENT_TALK_TO_CLASSMATE :
@@ -1065,178 +1066,178 @@ public class MapFragment extends Fragment {
 				break;
 			case EVENT_BACK_HOME_FIRST :
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("还有时间，复习下吧 ");	
 				break;
 			case EVENT_BACK_HOME_LATER :
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("不够时间，随便应付了 ");
 				break;
 			case EVENT_DO_EXAM :
 				list_avatar.add(AVATAR_TEACHER);
-				list_name.add("【老师】");
+				list_name.add(getString(R.string.chara_name_teacher));
 				list_dialog.add("下堂课要测验，请做好准备 ");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("哎呀求考神庇佑... ");
 				list_avatar.add(R.drawable.chara_7);
-				list_name.add("【电脑7】");
+				list_name.add(getString(R.string.chara_name_7));
 				list_dialog.add("呵呵呵");
 				list_avatar.add(R.drawable.chara_6);
-				list_name.add("【电脑6】");
+				list_name.add(getString(R.string.chara_name_6));
 				list_dialog.add("中文没学好，题目都看不懂");
 				break;
 			case EVENT_EXAM_GOOD :
 				list_avatar.add(AVATAR_TEACHER);
-				list_name.add("【老师】");
+				list_name.add(getString(R.string.chara_name_teacher));
 				list_dialog.add("...王小明拿测验卷，考得不错");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("谢谢老师教导有方");
 				break;
 			case EVENT_EXAM_PASS :
 				list_avatar.add(AVATAR_TEACHER);
-				list_name.add("【老师】");
+				list_name.add(getString(R.string.chara_name_teacher));
 				list_dialog.add("...王小明拿测验卷，及格");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("我会争取提高成绩");
 				break;
 			case EVENT_EXAM_BAD :
 				list_avatar.add(AVATAR_TEACHER);
-				list_name.add("【老师】");
+				list_name.add(getString(R.string.chara_name_teacher));
 				list_dialog.add("...王小明拿测验卷，不及格");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("哦...");
 				break;
 			case EVENT_ADD_INCOME :
 				list_avatar.add(AVATAR_MOTHER);
-				list_name.add("【母上】");
+				list_name.add(getString(R.string.chara_name_mother));
 				list_dialog.add("测验成绩不错，增加零用钱");
 				int income2 = globalTools.getPlayerIncome();
 				list_avatar.add(AVATAR_MOTHER);
-				list_name.add("【母上】");
+				list_name.add(getString(R.string.chara_name_mother));
 				list_dialog.add("今天的零花钱  " + String.valueOf(income2) + "¥");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("欸嘿嘿");
 				break;
 			case EVENT_SUB_INCOME :
 				list_avatar.add(AVATAR_MOTHER);
-				list_name.add("【母上】");
+				list_name.add(getString(R.string.chara_name_mother));
 				list_dialog.add("考试不及格！扣零用钱！");
 				int income3 = globalTools.getPlayerIncome();
 				list_avatar.add(AVATAR_MOTHER);
-				list_name.add("【母上】");
+				list_name.add(getString(R.string.chara_name_mother));
 				list_dialog.add("今天的零花钱  " + String.valueOf(income3) + "¥");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("哦...");
 				break;
 			case EVENT_NO_EXAM_CLASSROOM_1 :
 				list_avatar.add(R.drawable.chara_1);
-				list_name.add("【电脑1】");
+				list_name.add(getString(R.string.chara_name_1));
 				list_dialog.add("今天抽到点新卡");
 				list_avatar.add(R.drawable.chara_3);
-				list_name.add("【电脑3】");
+				list_name.add(getString(R.string.chara_name_3));
 				list_dialog.add("什么卡，快来拿瞧瞧");
 				break;
 			case EVENT_NO_EXAM_CLASSROOM_2 :
 				list_avatar.add(R.drawable.chara_6);
-				list_name.add("【电脑6】");
+				list_name.add(getString(R.string.chara_name_6));
 				list_dialog.add("这张No.108长得像咱歪果仁");
 				list_avatar.add(R.drawable.chara_4);
-				list_name.add("【电脑4】");
+				list_name.add(getString(R.string.chara_name_4));
 				list_dialog.add("但是比你帅");
 				break;
 			case EVENT_NO_EXAM_AFTER_SCHOOL_1 :
 				list_avatar.add(R.drawable.chara_2);
-				list_name.add("【电脑2】");
+				list_name.add(getString(R.string.chara_name_2));
 				list_dialog.add("去小卖部吗");
 				list_avatar.add(R.drawable.chara_7);
-				list_name.add("【电脑7】");
+				list_name.add(getString(R.string.chara_name_7));
 				list_dialog.add("不了，我回家复习");
 				list_avatar.add(R.drawable.chara_3);
-				list_name.add("【电脑3】");
+				list_name.add(getString(R.string.chara_name_3));
 				list_dialog.add("想做学霸么");
 				break;
 			case EVENT_NO_EXAM_AFTER_SCHOOL_2 :
 				list_avatar.add(R.drawable.chara_4);
-				list_name.add("【电脑4】");
+				list_name.add(getString(R.string.chara_name_4));
 				list_dialog.add("去小卖部吗");
 				list_avatar.add(R.drawable.chara_5);
-				list_name.add("【电脑5】");
+				list_name.add(getString(R.string.chara_name_5));
 				list_dialog.add("当然，走起");
 				list_avatar.add(R.drawable.chara_1);
-				list_name.add("【电脑1】");
+				list_name.add(getString(R.string.chara_name_1));
 				list_dialog.add("小明来不来");
 				break;
 			case EVENT_CRAMSCHOOL_MORNING :
 				list_avatar.add(R.drawable.chara_8);
-				list_name.add("【电脑8】");
+				list_name.add(getString(R.string.chara_name_8));
 				list_dialog.add("你那个区的卡片我们都没有呢");
 				list_avatar.add(R.drawable.chara_9);
-				list_name.add("【电脑9】");
+				list_name.add(getString(R.string.chara_name_9));
 				list_dialog.add("今天有没有啥新卡片啊");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("Talk is cheap, Show the card");
 				break;
 			case EVENT_CRAMSCHOOL_DUSK :
 				list_avatar.add(R.drawable.chara_10);
-				list_name.add("【电脑10】");
+				list_name.add(getString(R.string.chara_name_10));
 				list_dialog.add("哦耶，哥们下周见啦");
 				list_avatar.add(R.drawable.chara_11);
-				list_name.add("【电脑11】");
-				list_dialog.add("记得多带的新卡片来呀");
+				list_name.add(getString(R.string.chara_name_11));
+				list_dialog.add("记得多带点新卡片来呀");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("好说好说");
 				break;
 			case EVENT_STUDY_SUNDAY :
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("把别人集卡片的时间都用在学习上");
 				break;
 			case EVENT_PLAY_SUNDAY :
 				list_avatar.add(R.drawable.chara_2);
-				list_name.add("【电脑2】");
+				list_name.add(getString(R.string.chara_name_2));
 				list_dialog.add("靠，学霸你也来");
 				list_avatar.add(R.drawable.chara_7);
-				list_name.add("【电脑7】");
+				list_name.add(getString(R.string.chara_name_7));
 				list_dialog.add("呵呵呵，劳逸结合");
 				list_avatar.add(R.drawable.chara_3);
-				list_name.add("【电脑3】");
+				list_name.add(getString(R.string.chara_name_3));
 				list_dialog.add("人家是学神啦，不复习也高分");
 				break;
 			case EVENT_GIFT_CARD :
 				list_avatar.add(AVATAR_GIRL);
-				list_name.add("【李小华】");
+				list_name.add(getString(R.string.chara_name_girl));
 				list_dialog.add("喂，小明");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("咋了");
 				list_avatar.add(AVATAR_GIRL);
-				list_name.add("【李小华】");
+				list_name.add(getString(R.string.chara_name_girl));
 				list_dialog.add("我不集卡片，这张送你吧");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("哎哟谢谢");
 				break;
 			case EVENT_BADGUY :
 				list_avatar.add(AVATAR_BADGUY);
-				list_name.add("【坏小子】");
+				list_name.add(getString(R.string.chara_name_badguy));
 				list_dialog.add("站住");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("老兄有何贵干...");
 				list_avatar.add(AVATAR_BADGUY);
-				list_name.add("【坏小子】");
+				list_name.add(getString(R.string.chara_name_badguy));
 				list_dialog.add("老子最近也喜欢集卡片");
 				list_avatar.add(AVATAR_PLAYER);
-				list_name.add("【王小明】");
+				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("这张送给老兄吧...");
 				break;
 		}
@@ -1682,7 +1683,8 @@ public class MapFragment extends Fragment {
 			
 			if(new_buy_count > 0){
 				int chara_avatar = globalTools.getCharaAvatar(i);
-				String chara_name = "【电脑" + String.valueOf(i) + "】";
+				//String chara_name = "【电脑" + String.valueOf(i) + "】";
+				String chara_name = globalTools.getCharaName(i);
 				
 				ArrayList<String> list_new_card_name = new ArrayList<String>();
 				ArrayList<String> list_lack_card_name = new ArrayList<String>();
@@ -1712,7 +1714,7 @@ public class MapFragment extends Fragment {
 				}
 
 				if(list_lack_card_name.size() > 0){
-					String new_card_name_text = "刚刚抽到点新卡：\n";
+					String new_card_name_text = getString(R.string.note_new_card);
 					
 					for(int k=0; k<list_lack_card_name.size(); k++){
 						new_card_name_text += list_lack_card_name.get(k);
@@ -1728,8 +1730,8 @@ public class MapFragment extends Fragment {
 		
 		if(new_note_count == 0){
 			list_avatar.add(AVATAR_PLAYER);
-			list_name.add("【小明】");
-			list_dialog.add("好像没什么新发现");
+			list_name.add(getString(R.string.chara_name_0));
+			list_dialog.add(getString(R.string.note_no_news));
 		}
 		
 		return new_note_count;

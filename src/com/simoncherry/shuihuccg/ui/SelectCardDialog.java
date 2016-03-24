@@ -269,7 +269,7 @@ public class SelectCardDialog extends Dialog {
     		card_star.setText(context.getText(R.string.hero_star) + globalTools.getCardInformation("star", index));
     		card_epithet.setText(context.getText(R.string.hero_epithet) + globalTools.getCardInformation("epithet", index));
     		card_name.setText(context.getText(R.string.hero_name) + globalTools.getCardInformation("name", index));
-    		card_value.setText("稀有度：" + String.valueOf(globalTools.calcCardValue(index)/1000));
+    		card_value.setText(context.getText(R.string.hero_value) + String.valueOf(globalTools.calcCardValue(index)/1000));
         }
 	}
 }

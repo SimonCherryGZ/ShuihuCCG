@@ -141,12 +141,12 @@ public class StatusFragment extends Fragment {
 		builder.setTitle(res_id);
 		res_name = "item_" + String.valueOf(which) + "_effect";
 		res_id = getResources().getIdentifier(res_name, "string", getContext().getPackageName());
-		builder.setMessage(getContext().getResources().getText(res_id) + " 确定使用吗？");
+		builder.setMessage(getContext().getResources().getText(res_id) + getString(R.string.status_item_use_warning));
 		
 		if(which > 0){
 			final int which_item = which;
 			
-			builder.setPositiveButton("确定",  
+			builder.setPositiveButton(getString(R.string.btn_general_positive),  
 	                new DialogInterface.OnClickListener() {  
 	                    public void onClick(DialogInterface dialog, int whichButton) { 
 	                    	// TODO
@@ -157,7 +157,7 @@ public class StatusFragment extends Fragment {
 	                    	globalTools.PlaySystemClickSE(globalTools.SE_EAT);
 	                    }  
 	                });
-			builder.setNegativeButton("取消",  
+			builder.setNegativeButton(getString(R.string.btn_general_negative),  
 	                new DialogInterface.OnClickListener() {  
 	                    public void onClick(DialogInterface dialog, int whichButton) {
 	                    	dialog.dismiss();

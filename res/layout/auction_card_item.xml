@@ -14,7 +14,7 @@
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
-        android:background="#8056c5ff"
+        android:background="@color/item_hint_color"
         android:visibility="invisible"/>
     
     <TextView
@@ -69,7 +69,7 @@
         android:background="@drawable/btn_selector"
         android:textColor="#ffffff"
         android:textSize="16sp"
-        android:text="成交" />
+        android:text="@string/auction_item_btn_deal" />
 
 
 </RelativeLayout>

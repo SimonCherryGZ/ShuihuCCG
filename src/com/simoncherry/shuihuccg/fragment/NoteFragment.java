@@ -97,16 +97,14 @@ public class NoteFragment extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				select_pos = position;
 				int count = globalTools.getNoteCount();
-				Toast.makeText(getContext(), 
-						"pos: " + String.valueOf(select_pos) +
-						"  count: " + String.valueOf(count)
-				, Toast.LENGTH_SHORT).show();
 				
 				AlertDialog isExit = new AlertDialog.Builder(getContext()).create();  
-	            isExit.setTitle("系统提示");  
-	            isExit.setMessage("要删除这条笔记吗");
-	            isExit.setButton(DialogInterface.BUTTON_POSITIVE, "确定", listener);
-	            isExit.setButton(DialogInterface.BUTTON_NEGATIVE, "取消", listener);
+	            isExit.setTitle(getString(R.string.sys_general_title));  
+	            isExit.setMessage(getString(R.string.note_del_warning));
+	            isExit.setButton(DialogInterface.BUTTON_POSITIVE,
+	            		getString(R.string.btn_general_positive), listener);
+	            isExit.setButton(DialogInterface.BUTTON_NEGATIVE,
+	            		getString(R.string.btn_general_negative), listener);
 	            isExit.show();
 			}
         });
@@ -183,10 +181,15 @@ public class NoteFragment extends Fragment {
 		
 		if(type.equals("new")){
 			decode = 
-					"【电脑" + who + "】 " + "抽到了\n  No." + index + " 【"
+//					"【电脑" + who + "】 " + "抽到了\n  No." + index + " 【"
+//					+ globalTools.getCardInformation("epithet", Integer.parseInt(index))
+//					+ "·" + globalTools.getCardInformation("name", Integer.parseInt(index))
+//					+ "】";
+					"【" + globalTools.getCharaName(Integer.parseInt(who)) + "】 " 
+					+ getString(R.string.note_new_card2) + index + " 【"
 					+ globalTools.getCardInformation("epithet", Integer.parseInt(index))
 					+ "·" + globalTools.getCardInformation("name", Integer.parseInt(index))
-					+ "】";
+					+ "】";				
 		}else{
 			decode = type + " " + who + " " + index;
 		}

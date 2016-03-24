@@ -59,7 +59,7 @@
         android:layout_alignBottom="@+id/tv_shop_money"
         android:layout_marginRight="5dp"
         android:layout_toLeftOf="@+id/tv_shop_money"
-        android:text="我的零花钱："
+        android:text="@string/shop_player_money"
         android:textColor="@color/text_normal_color"
         android:textSize="18sp" />
 
@@ -74,7 +74,7 @@
         android:gravity="center"
         android:background="@drawable/shop_bubble_dialog"
         android:textSize="16sp"
-        android:text="欢迎光临"
+        android:text="@string/shop_welcome"
         android:textColor="@color/text_normal_color" />
 
     <ImageView

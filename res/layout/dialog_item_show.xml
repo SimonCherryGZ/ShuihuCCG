@@ -37,7 +37,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
                 android:textSize="16sp"
-                android:text="总价："/>
+                android:text="@string/shop_item_dialog_total_price"/>
             
             <TextView 
                 android:id="@+id/calc_unit_price"
@@ -130,7 +130,7 @@
                 android:layout_width="114.0dip"  
                 android:layout_height="40.0dip"  
                 android:gravity="center"  
-                android:text="OK" />  
+                android:text="@string/btn_general_positive" />  
                 
             <View
                 android:layout_width="30dp"
@@ -141,7 +141,7 @@
                 android:layout_width="114.0dip"  
                 android:layout_height="40.0dip"  
                 android:gravity="center"  
-                android:text="CANCEL" />  
+                android:text="@string/btn_general_negative" />  
         </LinearLayout>  
     </LinearLayout>  
   

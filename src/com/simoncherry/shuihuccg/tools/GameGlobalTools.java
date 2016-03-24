@@ -484,6 +484,16 @@ public class GameGlobalTools extends Application{
 		return img_id;
 	}
 	
+	public String getCharaName(int index){
+		Resources resources = getResources();
+		
+		String search_name = "chara_name_" + String.valueOf(index);
+		int search_id = resources.getIdentifier(search_name, "string", getPackageName());
+		search_name = String.valueOf(getText(search_id));
+		
+		return search_name;
+	}
+	
 	public String getCardInformation(String type, int index){
 		Resources resources = getResources();
 		
