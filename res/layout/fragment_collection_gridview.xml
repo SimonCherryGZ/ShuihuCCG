@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3e0b5"
+    tools:context="${relativePackage}.${activityClass}" >
+    
+
+    <ImageView
+        android:id="@+id/book_inside"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/collectionbook_inside" />
+    
+    <GridView 
+        android:id="@+id/gridview_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/page_pointer"
+        android:horizontalSpacing="0dp"  
+  		android:verticalSpacing="5dp"
+  		android:layout_marginLeft="60dp"
+  		android:layout_marginRight="60dp"
+  		android:layout_marginTop="20dp"
+  		android:numColumns="2" >
+        
+    </GridView>
+
+    <ImageButton
+        android:id="@+id/arrow_left"
+        android:layout_width="30dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/page_pointer_left"
+        android:scaleType="fitXY" />
+    
+    <ImageButton
+        android:id="@+id/arrow_right"
+        android:layout_width="30dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/page_pointer_right"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/page_pointer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_normal_color"
+        android:text="@string/page_pointer" />
+    
+    <ImageView
+        android:id="@+id/img_vague_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#800c0c0c"
+        android:visibility="invisible" />
+
+    <FrameLayout
+        android:id="@+id/layout_card_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+        
+        <ImageView
+            android:id="@+id/img_card_detail"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+</RelativeLayout>

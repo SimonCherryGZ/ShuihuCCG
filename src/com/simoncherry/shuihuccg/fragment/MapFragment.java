@@ -95,6 +95,7 @@ public class MapFragment extends Fragment {
 	final int SCENE_EXCHANGE_SHOP_SUNDAY = 24;
 	final int SCENE_AUCTION_SHOP_SUNDAY = 25;
 	final int SCENE_ALLEY = 26;
+	final int SCENE_CHECK_COMPLETION = 27;
 	
 	final static int EVENT_NONE = 0;
 	final static int EVENT_WEEKLY_MONEY = 1;
@@ -119,6 +120,7 @@ public class MapFragment extends Fragment {
 	final static int EVENT_STUDY_SUNDAY = 19;
 	final static int EVENT_GIFT_CARD = 20;
 	final static int EVENT_BADGUY = 21;
+	final static int EVENT_CHECK_COMPLETION = 23;
 	
 	final static int AVATAR_PLAYER = R.drawable.chara_0;
 	final static int AVATAR_DEAN = R.drawable.chara_dean;
@@ -293,6 +295,7 @@ public class MapFragment extends Fragment {
 								selectToSleep();
 								break;
 							case R.id.select_3 :
+								selectCheckCompletion();
 								break;
 							case R.id.select_4 :
 								break;
@@ -529,6 +532,7 @@ public class MapFragment extends Fragment {
 							selectToSleep();
 							break;
 						case R.id.select_3 :
+							selectCheckCompletion();
 							break;
 						case R.id.select_4 :
 							break;
@@ -601,6 +605,7 @@ public class MapFragment extends Fragment {
 								selectToSleep();
 								break;
 							case R.id.select_3 :
+								selectCheckCompletion();
 								break;
 							case R.id.select_4 :
 								break;
@@ -829,7 +834,8 @@ public class MapFragment extends Fragment {
 				selector_1.setVisibility(View.INVISIBLE);
 				selector_2.setVisibility(View.VISIBLE);
 				selector_2.setText(R.string.bedroom_select_2);
-				selector_3.setVisibility(View.INVISIBLE);
+				selector_3.setVisibility(View.VISIBLE);
+				selector_3.setText(R.string.bedroom_select_3);
 				selector_4.setVisibility(View.INVISIBLE);
 				break;
 			case SCENE_HOME_WEEKDAYS :
@@ -1015,6 +1021,9 @@ public class MapFragment extends Fragment {
 			case SCENE_ALLEY :
 				dialog_text.start(getString(R.string.prologue_alley));
 				break;	
+			case SCENE_CHECK_COMPLETION:
+				dialog_text.start(getString(R.string.prologue_completion));
+				break;
 		}
 	}
 	
@@ -1240,6 +1249,21 @@ public class MapFragment extends Fragment {
 				list_name.add(getString(R.string.chara_name_0));
 				list_dialog.add("这张送给老兄吧...");
 				break;
+			case EVENT_CHECK_COMPLETION :
+				int kinds = globalTools.getCardKinds(0);
+				list_avatar.add(AVATAR_PLAYER);
+				list_name.add(getString(R.string.chara_name_0));
+				list_dialog.add("已经收集了 " + String.valueOf(kinds) + " 张");
+				if(kinds < 108){
+					list_avatar.add(AVATAR_PLAYER);
+					list_name.add(getString(R.string.chara_name_0));
+					list_dialog.add("还差 " + String.valueOf(108-kinds) + " 张呢");
+				}else{
+					list_avatar.add(AVATAR_PLAYER);
+					list_name.add(getString(R.string.chara_name_0));
+					list_dialog.add("哇哈哈，集齐全部108将啦！");
+				}
+				break;
 		}
 		
 		int count = list_dialog.size();
@@ -1302,6 +1326,15 @@ public class MapFragment extends Fragment {
 		//game_scene = SCENE_HOME;
 		globalTools.setScene(game_scene);
 		layout_map_bg.startAnimation(transition_show_anim);
+	}
+	
+	private void selectCheckCompletion(){
+		dialog_count = setEventDialogText(EVENT_CHECK_COMPLETION);
+		dialog_index = 0;
+		
+		layout_selector.setVisibility(View.INVISIBLE);
+		layout_dialog.setVisibility(View.VISIBLE);
+		showPrologue(SCENE_CHECK_COMPLETION, EVENT_NONE);
 	}
 	
 	private void selectToSchoolFirst(){

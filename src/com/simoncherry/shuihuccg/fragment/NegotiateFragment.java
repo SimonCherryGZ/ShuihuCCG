@@ -53,6 +53,7 @@ public class NegotiateFragment extends Fragment {
 	private ImageView btn_select_down;
 	private TextView tv_player_dialog;
 	private TextView tv_npc_dialog;
+	private TextView tv_npc_name;
 	private Button btn_back;
 	private Button btn_exchange;
 	private Button btn_gamble;
@@ -119,6 +120,7 @@ public class NegotiateFragment extends Fragment {
         btn_select_down = (ImageView) getActivity().findViewById(R.id.btn_select_down);
         tv_player_dialog = (TextView) getActivity().findViewById(R.id.tv_player_dialog);
         tv_npc_dialog = (TextView) getActivity().findViewById(R.id.tv_npc_dialog);
+        tv_npc_name = (TextView) getActivity().findViewById(R.id.tv_npc_name);
         btn_back = (Button) getActivity().findViewById(R.id.btn_back);
         btn_exchange = (Button) getActivity().findViewById(R.id.btn_exchange);
         btn_gamble = (Button) getActivity().findViewById(R.id.btn_gamble);
@@ -280,15 +282,14 @@ public class NegotiateFragment extends Fragment {
         	}
         }
 		
+		setAvatar(0);
         setAvatar(npc_chara_index);
         setSelectCard(0, player_card_index);
         setSelectCard(npc_chara_index, npc_card_index);
         
         int game_scene = globalTools.getScene();
         setNegotiateBackground(game_scene);
-        
-        
-        
+
         ((MainActivity)getActivity()).setLoadingImg(0, false);
 	}
 	
@@ -449,11 +450,17 @@ public class NegotiateFragment extends Fragment {
 		img_name = "chara_" + String.valueOf(chara);
 		img_id = resources.getIdentifier(img_name, "drawable", this.getActivity().getPackageName());
 		if(chara == 0){
-			img_player_avatar.setImageResource(img_id);
-			img_player_card.setImageResource(R.drawable.front0);
+			//img_player_avatar.setImageResource(img_id);
+			//img_player_card.setImageResource(R.drawable.front0);
+			img_player_avatar.setImageBitmap(globalTools.decodeSampledBitmapFromResource(getResources(), img_id, 100, 155));
+			img_player_card.setImageBitmap(globalTools.decodeSampledBitmapFromResource(getResources(), R.drawable.front0, 80, 120));
 		}else{
-			img_npc_avatar.setImageResource(img_id);
-			img_npc_card.setImageResource(R.drawable.front0);
+			tv_npc_name.setText(globalTools.getCharaName(chara));
+			//img_npc_avatar.setImageResource(img_id);
+			//img_npc_card.setImageResource(R.drawable.front0);
+			img_npc_avatar.setImageBitmap(globalTools.decodeSampledBitmapFromResource(getResources(), img_id, 100, 155));
+			img_npc_card.setImageBitmap(globalTools.decodeSampledBitmapFromResource(getResources(), R.drawable.front0, 80, 120));
+			
 		}
 		
 	}

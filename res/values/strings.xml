@@ -18,8 +18,8 @@
     <string name="chara_name_5">靓仔鹏</string>
     <string name="chara_name_6">Tony</string>
     <string name="chara_name_7">霍小超</string>
-    <string name="chara_name_8">CHOK燊</string>
-    <string name="chara_name_9">B哥</string>
+    <string name="chara_name_8">燊哥</string>
+    <string name="chara_name_9">阿B</string>
     <string name="chara_name_10">刘小华</string>
     <string name="chara_name_11">肥仔超</string>
     <string name="chara_name_mother">母上</string>
@@ -46,6 +46,7 @@
     <string name="prologue_cramschool_dusk">呼，终于补完习</string>
     <string name="prologue_another_shop">便利店抽的卡好像和小卖部不同</string>
     <string name="prologue_alley">抄捷径不会有事吧</string>
+    <string name="prologue_completion">看看收集的成果</string>
 
     <string name="map_bedroom">部屋</string>
     <string name="map_home">玄关</string>
@@ -60,6 +61,7 @@
     <string name="map_alley">小巷·黄昏</string>
 
     <string name="bedroom_select_2">睡觉</string>
+    <string name="bedroom_select_3">查看进度</string>
     <string name="home_weekdays_select_2">直接去学校</string>
     <string name="home_weekdays_select_3">先绕道去小卖部</string>
     <string name="home_saturday_select_2">去补习班</string>

@@ -43,6 +43,20 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="50dp" />
+    
+    <TextView 
+        android:id="@+id/tv_host_name"
+        android:layout_width="20dp"
+        android:layout_height="155dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/text_normal_color"
+        android:text="@string/chara_name_0"
+        android:visibility="visible" />
 
     <ListView 
         android:id="@+id/auction_list"

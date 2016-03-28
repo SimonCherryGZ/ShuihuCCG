@@ -504,9 +504,16 @@ public class GameGlobalTools extends Application{
 		return search_name;
 	}
 	
-	public int getCardImgId(int index){
+	public int getCardFrontImgId(int index){
 		Resources resources = getResources();
 		String img_filename = "front" + String.valueOf(index);
+		int img_id = resources.getIdentifier(img_filename, "drawable", getPackageName());
+		return img_id;
+	}
+	
+	public int getCardBackImgId(int index){
+		Resources resources = getResources();
+		String img_filename = "back" + String.valueOf(index);
 		int img_id = resources.getIdentifier(img_filename, "drawable", getPackageName());
 		return img_id;
 	}

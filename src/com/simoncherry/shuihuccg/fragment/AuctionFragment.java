@@ -54,6 +54,7 @@ public class AuctionFragment extends Fragment {
 	private ImageView img_auction_chara;
 	private ImageView img_auction_card;
 	private ImageView img_new_logo;
+	private TextView tv_host_name;
 	private TextView tv_auction_dialog;
 	private TextView tv_auction_list_loading;
 	private TextView tv_card_value;
@@ -116,6 +117,7 @@ public class AuctionFragment extends Fragment {
         img_auction_chara = (ImageView) getActivity().findViewById(R.id.img_auction_chara);
         img_auction_card = (ImageView) getActivity().findViewById(R.id.img_auction_card);
         img_new_logo = (ImageView) getActivity().findViewById(R.id.img_new_logo);
+        tv_host_name = (TextView) getActivity().findViewById(R.id.tv_host_name);
         tv_auction_dialog = (TextView) getActivity().findViewById(R.id.tv_auction_dialog);
         tv_auction_list_loading = (TextView) getActivity().findViewById(R.id.tv_auction_list_loading);
         tv_card_value = (TextView) getActivity().findViewById(R.id.tv_card_value);
@@ -181,6 +183,7 @@ public class AuctionFragment extends Fragment {
 								int rare_card_count = globalTools.getRareCardCount(auction_host_index);
 								if(rare_card_count > 0 && isHostWantToQuit == false){
 									setAuctionHostAvatar(auction_host_index);
+									tv_host_name.setText(globalTools.getCharaName(auction_host_index));
 									isHostContinueAuction = true;
 									break;
 								}
@@ -516,6 +519,8 @@ public class AuctionFragment extends Fragment {
         	auction_step = STEP_HOST_SELECT_CARD;
         }
         
+        tv_host_name.setText(globalTools.getCharaName(auction_host_index));
+        
         int game_scene = globalTools.getScene();
         setAuctionBackground(game_scene);
         setAuctionCard(0);
@@ -664,7 +669,7 @@ public class AuctionFragment extends Fragment {
 		
 		chara_name = globalTools.getCharaName(chara_index);
 		
-		int img_id = globalTools.getCardImgId(card_index);
+		int img_id = globalTools.getCardFrontImgId(card_index);
 		String epithet = globalTools.getCardInformation("epithet", card_index);
 		String name = globalTools.getCardInformation("name", card_index);
 		String card_name = "No." + String.valueOf(card_index)
